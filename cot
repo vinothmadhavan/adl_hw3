@@ -1,0 +1,49 @@
+Here’s how you can implement the `format_prompt` function for in-context learning with a chat template and a good example. The key is to provide a brief instruction, a concise example, and then the actual question, using the chat format expected by SmolLM2.
+
+Replace the `raise NotImplementedError()` line with the following code:
+
+```python
+def format_prompt(self, question: str) -> str:
+    """
+    Take a question and convert it into a chat template. The LLM will likely answer much
+    better if you provide a chat template. self.tokenizer.apply_chat_template can help here
+    """
+    # Example: "How many grams are there per 2 kg?" -> "1 kg = 1000 grams. 2 * 1000 = <answer>2000</answer>"
+    messages = [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant that answers unit conversion questions. Be concise and show your reasoning step by step. Wrap the final answer in <answer></answer> tags."
+        },
+        {
+            "role": "user",
+            "content": "How many grams are there per 2 kg?"
+        },
+        {
+            "role": "assistant",
+            "content": "1 kg = 1000 grams. 2 * 1000 = <answer>2000</answer>"
+        },
+        {
+            "role": "user",
+            "content": question
+        }
+    ]
+    prompt = self.tokenizer.apply_chat_template(
+        messages, add_generation_prompt=True, tokenize=False
+    )
+    return prompt
+```
+
+**Explanation:**
+- The system message gives brief instructions and tells the model to be concise and use `<answer></answer>`.
+- The first user/assistant pair is a clear, simple example of the desired reasoning and answer format.
+- The last user message is the actual question.
+- `add_generation_prompt=True` ensures the output is ready for the model to generate the assistant’s answer.
+
+---
+
+**Test with:**
+```bash
+python -m homework.cot test
+```
+
+You can tune the example and instructions for even better results, but this should get you to the required accuracy and answer rate. Let me know if you want to see more advanced prompt engineering!
