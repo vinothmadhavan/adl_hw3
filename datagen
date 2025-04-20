@@ -1,0 +1,55 @@
+Certainly! Here is a complete implementation for `generate_dataset` as described:
+
+```python
+import json
+from .cot import CoTModel
+from .data import Dataset
+
+def generate_dataset(output_json: str, oversample: int = 10, temperature: float = 0.6):
+    """
+    Generate a dataset for RFT by sampling multiple completions for each question,
+    and keeping only those that produce the correct answer.
+    """
+    model = CoTModel()
+    dataset = Dataset("train")
+    results = []
+
+    for question, answer in dataset:
+        prompt = model.format_prompt(question)
+        # batched_generate returns a list of lists (since num_return_sequences > 1)
+        generations = model.batched_generate(
+            [prompt], num_return_sequences=oversample, temperature=temperature
+        )[0]  # [0] because we have only one prompt
+
+        found = False
+        for gen in generations:
+            try:
+                pred = model.parse_answer(gen)
+                # Use a tolerance for float comparison
+                if abs(pred - float(answer)) < 1e-2:
+                    results.append([question, answer, gen])
+                    found = True
+                    break
+            except Exception:
+                continue
+        # If none found, skip
+
+    with open(output_json, "w") as f:
+        json.dump(results, f, indent=2)
+
+if __name__ == "__main__":
+    from fire import Fire
+
+    Fire(generate_dataset)
+```
+
+**Usage:**
+```bash
+python -m homework.datagen generate_dataset --output_json=data/rft.json --oversample=15 --temperature=0.7
+```
+
+- `oversample` controls how many completions to generate per question.
+- `temperature` controls the diversity of generations.
+
+This will create `data/rft.json` in the required format.  
+Let me know if you need further help!
