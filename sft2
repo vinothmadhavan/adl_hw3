@@ -1,0 +1,108 @@
+Certainly! Here’s how you can **increase the LoRA rank** for better performance, while keeping the adapter size under 50MB.
+
+---
+
+### 1. **How to choose LoRA rank and alpha**
+
+- The LoRA adapter size is roughly proportional to `r` (rank).
+- For a 1.7B parameter model, `r=16` or `r=32` is usually safe for <50MB, but you should check the actual size after training.
+- `lora_alpha` is typically set to 4x the rank.
+
+---
+
+### 2. **Code changes**
+
+Just update the LoRA config in your `train_model` function:
+
+```python
+def train_model(
+    output_dir: str,
+    rft_json: str = "data/rft.json",
+    lora_rank: int = 32,         # <-- Increase rank here
+    lora_alpha: int = 128,       # <-- 4x rank
+    **kwargs,
+):
+    from peft import LoraConfig, get_peft_model
+    from transformers import TrainingArguments, Trainer
+    import torch
+    import json
+
+    # Load base model and tokenizer
+    llm = BaseLLM()
+    tokenizer = llm.tokenizer
+
+    # LoRA config (tune rank and alpha as needed)
+    lora_config = LoraConfig(
+        r=lora_rank,
+        lora_alpha=lora_alpha,
+        target_modules="all-linear",
+        bias="none",
+        task_type="CAUSAL_LM",
+    )
+
+    # Add LoRA adapter
+    model = get_peft_model(llm.model, lora_config)
+    if torch.cuda.is_available():
+        model.enable_input_require_grads()
+
+    # Load RFT dataset
+    with open(rft_json, "r") as f:
+        rft_data = json.load(f)
+
+    tokenized_train = TokenizedDataset(tokenizer, rft_data, format_example)
+
+    # Training arguments
+    training_args = TrainingArguments(
+        output_dir=output_dir,
+        logging_dir=output_dir,
+        report_to="tensorboard",
+        per_device_train_batch_size=32,
+        num_train_epochs=5,
+        learning_rate=2e-4,
+        gradient_checkpointing=True,
+        save_strategy="epoch",
+        save_total_limit=1,
+        remove_unused_columns=False,
+        fp16=torch.cuda.is_available(),
+        logging_steps=10,
+    )
+
+    # Trainer
+    trainer = Trainer(
+        model=model,
+        args=training_args,
+        train_dataset=tokenized_train,
+        tokenizer=tokenizer,
+    )
+
+    # Train
+    trainer.train()
+
+    # Save LoRA adapter only
+    model.save_pretrained(output_dir)
+
+    # Test
+    test_model(output_dir)
+```
+
+---
+
+### 3. **How to use**
+
+You can now specify the rank and alpha from the command line:
+
+```bash
+python -m homework.sft train --output_dir=homework/sft_model --rft_json=data/rft.json --lora_rank=32 --lora_alpha=128
+```
+
+- If your adapter is still under 50MB, you can try `lora_rank=48` or even `64` (with `lora_alpha=192` or `256`).
+- After training, check the size of the `homework/sft_model` directory. If it’s over 50MB, reduce the rank.
+
+---
+
+**Summary:**  
+- Increase `lora_rank` and `lora_alpha` in your LoRA config.
+- Pass them as arguments to your training script.
+- Check the output directory size to ensure it’s <50MB.
+
+Let me know if you want a function to automatically check the size after training!
