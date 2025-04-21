@@ -1,0 +1,43 @@
+ython -m homework.sft train --output_dir=homework/sft_model
+<frozen runpy>:128: RuntimeWarning: 'homework.sft' found in sys.modules after import of package 'homework', but prior to execution of 'homework.sft'; this may result in unpredictable behaviour
+C:\Users\divya\OneDrive\Desktop\MSAI\ADL\homework3_v3\homework\sft.py:129: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+No label_names provided for model class `PeftModelForCausalLM`. Since `PeftModel` hides base models input arguments, if label_names is not given, label_names can't be set automatically within `Trainer`. Note that empty label_names list will be used instead.
+  0%|                                                                                                              | 0/160 [00:00<?, ?it/s]`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+C:\Users\divya\OneDrive\Desktop\MSAI\ADL\homework3_v3\.venv\Lib\site-packages\torch\utils\checkpoint.py:87: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  warnings.warn(
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\divya\OneDrive\Desktop\MSAI\ADL\homework3_v3\homework\sft.py", line 160, in <module>
+    Fire({"train": train_model, "test": test_model, "load": load})
+  File "C:\Users\divya\OneDrive\Desktop\MSAI\ADL\homework3_v3\.venv\Lib\site-packages\fire\core.py", line 135, in Fire
+    component_trace = _Fire(component, args, parsed_flag_args, context, name)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\divya\OneDrive\Desktop\MSAI\ADL\homework3_v3\.venv\Lib\site-packages\fire\core.py", line 468, in _Fire
+    component, remaining_args = _CallAndUpdateTrace(
+                                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\divya\OneDrive\Desktop\MSAI\ADL\homework3_v3\.venv\Lib\site-packages\fire\core.py", line 684, in _CallAndUpdateTrace       
+    component = fn(*varargs, **kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\divya\OneDrive\Desktop\MSAI\ADL\homework3_v3\homework\sft.py", line 137, in train_model
+    trainer.train()
+  File "C:\Users\divya\OneDrive\Desktop\MSAI\ADL\homework3_v3\.venv\Lib\site-packages\transformers\trainer.py", line 2245, in train
+    return inner_training_loop(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\divya\OneDrive\Desktop\MSAI\ADL\homework3_v3\.venv\Lib\site-packages\transformers\trainer.py", line 2560, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\divya\OneDrive\Desktop\MSAI\ADL\homework3_v3\.venv\Lib\site-packages\transformers\trainer.py", line 3782, in training_step 
+    self.accelerator.backward(loss, **kwargs)
+  File "C:\Users\divya\OneDrive\Desktop\MSAI\ADL\homework3_v3\.venv\Lib\site-packages\accelerate\accelerator.py", line 2454, in backward    
+    loss.backward(**kwargs)
+  File "C:\Users\divya\OneDrive\Desktop\MSAI\ADL\homework3_v3\.venv\Lib\site-packages\torch\_tensor.py", line 626, in backward
+    torch.autograd.backward(
+  File "C:\Users\divya\OneDrive\Desktop\MSAI\ADL\homework3_v3\.venv\Lib\site-packages\torch\autograd\__init__.py", line 347, in backward    
+    _engine_run_backward(
+  File "C:\Users\divya\OneDrive\Desktop\MSAI\ADL\homework3_v3\.venv\Lib\site-packages\torch\autograd\graph.py", line 823, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: element 0 of tensors does not require grad and does not have a grad_fn
+  0%|                                                                                                              | 0/160 [00:20<?, ?it/s]
