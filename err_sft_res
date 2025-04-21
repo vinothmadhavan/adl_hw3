@@ -1,0 +1,118 @@
+Great, you are very close!  
+The error:
+
+```
+RuntimeError: element 0 of tensors does not require grad and does not have a grad_fn
+```
+
+means that **the model's parameters do not require gradients**. This is a common issue when using PEFT/LoRA with HuggingFace models, especially if you forget to call `model.enable_input_require_grads()` **after** wrapping the model with LoRA.
+
+---
+
+## **How to Fix**
+
+### 1. **Call `enable_input_require_grads()` on the LoRA model**
+You must call this **after** you create the LoRA model, and only if you are on GPU.
+
+**Replace this block:**
+```python
+model = get_peft_model(model, lora_config)
+if torch.cuda.is_available():
+    model.enable_input_require_grads()
+```
+
+**With this:**
+```python
+model = get_peft_model(model, lora_config)
+if torch.cuda.is_available() or torch.backends.mps.is_available():
+    model.enable_input_require_grads()
+```
+
+- This ensures that the LoRA adapter's parameters require gradients, which is necessary for training.
+
+---
+
+### 2. **Check Your Dataset Output**
+
+Make sure your `TokenizedDataset` returns a dictionary with keys:  
+`input_ids`, `attention_mask`, and `labels` (all as tensors).
+
+If you are returning lists, convert them to tensors:
+```python
+import torch
+...
+def __getitem__(self, idx):
+    formated_data = self.format_fn(*self.data[idx])
+    item = tokenize(self.tokenizer, **formated_data)
+    # Convert lists to tensors
+    return {k: torch.tensor(v) for k, v in item.items()}
+```
+
+---
+
+### 3. **(Optional) Remove Deprecated `tokenizer` Argument Warning**
+
+The warning about `tokenizer` being deprecated in `Trainer` can be ignored for now, but if you want to be future-proof, you can remove the `tokenizer=tokenizer` argument from the `Trainer` call.
+
+---
+
+## **Summary of Fixes**
+
+- **Call `enable_input_require_grads()` on the LoRA model after wrapping.**
+- **Ensure your dataset returns tensors, not lists.**
+
+---
+
+## **Example: Final Training Block**
+
+```python
+from peft import LoraConfig, get_peft_model
+from transformers import TrainingArguments, Trainer
+import torch
+
+# ... (load data, model, tokenizer as before)
+
+model = get_peft_model(model, lora_config)
+if torch.cuda.is_available() or torch.backends.mps.is_available():
+    model.enable_input_require_grads()
+
+tokenized_dataset = TokenizedDataset(tokenizer, trainset, format_example)
+
+training_args = TrainingArguments(
+    output_dir=output_dir,
+    logging_dir=output_dir,
+    report_to="tensorboard",
+    per_device_train_batch_size=32,
+    num_train_epochs=5,
+    learning_rate=2e-4,
+    gradient_checkpointing=True,
+    save_strategy="epoch",
+    logging_steps=10,
+    remove_unused_columns=False,
+    fp16=torch.cuda.is_available(),
+)
+
+trainer = Trainer(
+    model=model,
+    args=training_args,
+    train_dataset=tokenized_dataset,
+    # tokenizer=tokenizer,  # (optional, can remove)
+)
+
+trainer.train()
+trainer.save_model(output_dir)
+test_model(output_dir)
+```
+
+And in your `TokenizedDataset`:
+```python
+def __getitem__(self, idx):
+    formated_data = self.format_fn(*self.data[idx])
+    item = tokenize(self.tokenizer, **formated_data)
+    return {k: torch.tensor(v) for k, v in item.items()}
+```
+
+---
+
+**Try these fixes and your training should work!**  
+Let me know if you hit any other errors.
