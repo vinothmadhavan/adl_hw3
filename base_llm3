@@ -1,0 +1,63 @@
+def batched_generate(
+    self, prompts: list[str], num_return_sequences: int | None = None, temperature: float = 0
+) -> list[str] | list[list[str]]:
+    from tqdm import tqdm  # Importing tqdm for progress bar
+
+    micro_batch_size = 32
+    if len(prompts) > micro_batch_size:
+        return [
+            r
+            for idx in tqdm(
+                range(0, len(prompts), micro_batch_size), desc=f"LLM Running on Micro Batches {micro_batch_size}"
+            )
+            for r in self.batched_generate(prompts[idx : idx + micro_batch_size], num_return_sequences, temperature)
+        ]
+
+    self.tokenizer.padding_side = "left"
+    inputs = self.tokenizer(
+        prompts,
+        padding=True,
+        return_tensors="pt",
+    )
+    input_ids = inputs["input_ids"].to(self.device)
+    attention_mask = inputs["attention_mask"].to(self.device)
+
+    max_new_tokens = 50
+    do_sample = temperature > 0
+    num_return_sequences = num_return_sequences if num_return_sequences is not None else 1
+
+    with torch.no_grad():
+        outputs = self.model.generate(
+            input_ids=input_ids,
+            attention_mask=attention_mask,
+            max_new_tokens=max_new_tokens,
+            do_sample=do_sample,
+            temperature=temperature if do_sample else None,
+            num_return_sequences=num_return_sequences,
+            eos_token_id=self.tokenizer.eos_token_id,
+            pad_token_id=self.tokenizer.pad_token_id,
+        )
+
+    prompt_lengths = [x.sum().item() for x in attention_mask]
+    batch_size = len(prompts)
+
+    decoded = []
+    for i in range(outputs.shape[0]):
+        prompt_idx = i // num_return_sequences
+        prompt_len = prompt_lengths[prompt_idx]
+        decoded.append(
+            self.tokenizer.decode(
+                outputs[i, prompt_len:],
+                skip_special_tokens=True,
+            ).strip()
+        )
+
+    if num_return_sequences == 1:
+        return decoded
+    else:
+        grouped = []
+        for i in range(batch_size):
+            start = i * num_return_sequences
+            end = (i + 1) * num_return_sequences
+            grouped.append(decoded[start:end])
+        return grouped
