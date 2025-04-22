@@ -1,0 +1,30 @@
+def tokenize(tokenizer, question: str, answer: str):
+    full_text = f"{question} {answer}{tokenizer.eos_token}"
+
+    tokenizer.padding_side = "right"
+    tokenizer.pad_token = tokenizer.eos_token
+    full = tokenizer(full_text, padding="max_length", truncation=True, max_length=128)
+
+    input_ids = full["input_ids"]
+    # Use add_special_tokens=False to avoid extra tokens
+    question_ids = tokenizer(question, add_special_tokens=False)["input_ids"]
+    question_len = len(question_ids)
+
+    # Create labels: mask out the prompt part
+    labels = [-100] * question_len + input_ids[question_len:]
+
+    for i in range(len(labels)):
+        if full["attention_mask"][i] == 0:
+            labels[i] = -100
+
+    full["labels"] = labels
+    return full
+
+
+
+
+sample = tokenized_dataset[0]
+print("input_ids:", sample["input_ids"])
+print("labels:", sample["labels"])
+print("decoded input:", tokenizer.decode(sample["input_ids"]))
+print("decoded labels:", [tokenizer.decode([i]) if i != -100 else "<mask>" for i in sample["labels"]])
