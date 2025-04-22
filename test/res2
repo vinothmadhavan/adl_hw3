@@ -1,0 +1,22 @@
+def tokenize(tokenizer, question: str, answer: str):
+    # Add a space between question and answer, as in the full_text
+    full_text = f"{question} {answer}{tokenizer.eos_token}"
+
+    tokenizer.padding_side = "right"
+    tokenizer.pad_token = tokenizer.eos_token
+    full = tokenizer(full_text, padding="max_length", truncation=True, max_length=128)
+
+    input_ids = full["input_ids"]
+    # Count tokens in question + space
+    question_prefix = f"{question} "
+    question_len = len(tokenizer(question_prefix, add_special_tokens=False)["input_ids"])
+
+    # Create labels: mask out the prompt part
+    labels = [-100] * question_len + input_ids[question_len:]
+
+    for i in range(len(labels)):
+        if full["attention_mask"][i] == 0:
+            labels[i] = -100
+
+    full["labels"] = labels
+    return full
