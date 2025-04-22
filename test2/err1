@@ -1,0 +1,478 @@
+base_llm.py:
+
+from typing import overload
+import re
+import torch
+from transformers import AutoModelForCausalLM, AutoTokenizer
+
+checkpoint = "HuggingFaceTB/SmolLM2-360M-Instruct"
+
+device = "cuda" if torch.cuda.is_available() else "mps" if torch.backends.mps.is_available() else "cpu"
+
+
+class BaseLLM:
+    def __init__(self, checkpoint=checkpoint):
+        self.tokenizer = AutoTokenizer.from_pretrained(checkpoint)
+        self.model = AutoModelForCausalLM.from_pretrained(checkpoint).to(device)
+        self.device = device
+
+    def format_prompt(self, question: str) -> str:
+        """
+        Take a question and convert it into an input to SmolLM2. The LLM will likely answer much
+        better if you provide a chat template. self.tokenizer.apply_chat_template can help here
+        """
+        
+        # # question="Answer the following question:"+question
+        # question=f"""
+        # Answer the following question. 
+        # Response should strictly be enclosed with <answer> and </answer> tags. 
+        # Code should not be generated.
+        # {question}        
+        # """
+        return question + " "
+        # return question
+
+    # def parse_answer(self, answer: str) -> float:
+    #     """
+    #     Parse the <answer></answer> tag and return a float.
+    #     This function is somewhat robust to output errors (e.g. missing </answer> tags).
+    #     """
+    #     try:
+    #         return float(answer.split("<answer>")[1].split("</answer>")[0])
+    #     except (IndexError, ValueError):
+    #         return float("nan")
+
+    
+
+    def parse_answer(self, answer: str) -> float:
+        # Extract the first <answer>...</answer> block
+        match = re.search(r"<answer>(.*?)</answer>", answer, re.DOTALL)
+        if match:
+            try:
+                return float(match.group(1).strip())
+            except ValueError:
+                return float("nan")
+        return float("nan")
+
+    def generate(self, prompt: str) -> str:
+        """
+        (Optional) Implement this method first and then implement batched_generate below.
+        It is much easier to implement generation without batching.
+
+        The overall flow is the same:
+        - tokenize the prompt with self.tokenizer
+        - call self.model.generate
+        - decode the outputs with self.tokenizer.decode
+
+        """
+        return self.batched_generate([prompt])[0]
+
+    @overload
+    def batched_generate(
+        self, prompts: list[str], num_return_sequences: None = None, temperature: float = 0
+    ) -> list[str]:
+        """
+        Batched version of `generate` method.
+        This version returns a single generation for each prompt.
+        """
+
+    @overload
+    def batched_generate(
+        self, prompts: list[str], num_return_sequences: int, temperature: float = 0
+    ) -> list[list[str]]:
+        """
+        Batched version of `generate` method.
+        This version returns a list of generation for each prompt.
+        """
+
+    # def batched_generate(
+    #     self, prompts: list[str], num_return_sequences: int | None = None, temperature: float = 0
+    # ) -> list[str] | list[list[str]]:
+    #     """
+    #     Batched version of `generate` method.
+
+    #     You will likely get an up to 10x speedup using batched decoding.
+
+    #     To implement batch decoding you will need to:
+    #     - tokenize the prompts self.tokenizer with padding=True and return_tensors="pt"
+    #     - call self.model.generate
+    #     - decode the outputs with self.tokenizer.batch_decode
+
+    #     Tip: You need to set self.tokenizer.padding_side = "left" to get the correct padding behavior for generation.
+    #          Left padding makes sure all sequences are aligned to the right (i.e. where tokens are generated).
+    #     Tip: self.model.generate takes a lot of parameters. Here are some relevant ones:
+    #         - max_new_tokens: The maximum number of tokens to generate. Set this to a reasonable value
+    #                           (50 should suffice).
+    #         - do_sample and temperature: For any temperature > 0, set do_sample=True.
+    #                                      do_sample=False will use greedy decoding.
+    #         - num_return_sequences: The number of sequences to return. Note that this will generate a flat
+    #                                 list of len(prompts) * num_return_sequences entries.
+    #         - eos_token_id: The end of sequence token id. This is used to stop generation. Set this
+    #                         to self.tokenizer.eos_token_id.
+    #     Pro Tip: Only batch_decode generated tokens by masking out the inputs with
+    #              outputs[:, len(inputs["input_ids"][0]) :]
+    #     """
+    #     from tqdm import tqdm  # Importing tqdm for progress bar
+
+    #     # Preventing OOM
+    #     # Depending on your GPU batched generation will use a lot of memory.
+    #     # If you run out of memory, try to reduce the micro_batch_size.
+    #     micro_batch_size = 32
+    #     if len(prompts) > micro_batch_size:
+    #         return [
+    #             r
+    #             for idx in tqdm(
+    #                 range(0, len(prompts), micro_batch_size), desc=f"LLM Running on Micro Batches {micro_batch_size}"
+    #             )
+    #             for r in self.batched_generate(prompts[idx : idx + micro_batch_size], num_return_sequences, temperature)
+    #         ]
+
+    #     # Set left padding for generation
+    #     self.tokenizer.padding_side = "left"
+
+    #     # Tokenize prompts
+    #     inputs = self.tokenizer(
+    #         prompts,
+    #         padding=True,
+    #         return_tensors="pt",
+    #     )
+    #     input_ids = inputs["input_ids"].to(self.device)
+    #     attention_mask = inputs["attention_mask"].to(self.device)
+
+    #     # Generation parameters
+    #     max_new_tokens = 50
+    #     do_sample = temperature > 0
+    #     num_return_sequences = num_return_sequences if num_return_sequences is not None else 1
+
+    #     with torch.no_grad():
+    #         outputs = self.model.generate(
+    #             input_ids=input_ids,
+    #             attention_mask=attention_mask,
+    #             max_new_tokens=max_new_tokens,
+    #             do_sample=do_sample,
+    #             temperature=temperature if do_sample else None,
+    #             num_return_sequences=num_return_sequences,
+    #             eos_token_id=self.tokenizer.eos_token_id,
+    #             pad_token_id=self.tokenizer.pad_token_id,
+    #         )
+
+    #     # outputs shape: (batch_size * num_return_sequences, seq_len)
+    #     # Only decode the generated part (not the prompt)
+    #     # For left padding, the prompt length is the same for all in the batch
+    #     prompt_lengths = [x.sum().item() for x in attention_mask]
+    #     # If all prompts are the same length, we can use a single value
+    #     min_prompt_len = min(prompt_lengths)
+    #     # For each output, slice off the prompt tokens
+    #     # outputs is (batch_size * num_return_sequences, seq_len)
+    #     # If num_return_sequences > 1, outputs are grouped per prompt
+
+    #     # If num_return_sequences > 1, outputs are grouped per prompt
+    #     # So, for each prompt, there are num_return_sequences outputs in a row
+
+    #     # For each output, find the corresponding prompt length
+    #     total_outputs = outputs.shape[0]
+    #     batch_size = len(prompts)
+    #     decoded = []
+    #     for i in range(total_outputs):
+    #         # For each output, find which prompt it corresponds to
+    #         prompt_idx = i % batch_size
+    #         prompt_len = prompt_lengths[prompt_idx]
+    #         # Only decode the generated part
+    #         decoded.append(
+    #             self.tokenizer.decode(
+    #                 outputs[i, prompt_len:],
+    #                 skip_special_tokens=True,
+    #             ).strip()
+    #         )
+
+    #     # If num_return_sequences == 1, return a flat list
+    #     if num_return_sequences == 1:
+    #         return decoded
+    #     else:
+    #         # Group into list of lists
+    #         grouped = []
+    #         for i in range(batch_size):
+    #             grouped.append(decoded[i::batch_size])
+    #         return grouped
+
+
+    def batched_generate(
+        self, prompts: list[str], num_return_sequences: int | None = None, temperature: float = 0
+    ) -> list[str] | list[list[str]]:
+        from tqdm import tqdm  # Importing tqdm for progress bar
+
+        micro_batch_size = 32
+        if len(prompts) > micro_batch_size:
+            return [
+                r
+                for idx in tqdm(
+                    range(0, len(prompts), micro_batch_size), desc=f"LLM Running on Micro Batches {micro_batch_size}"
+                )
+                for r in self.batched_generate(prompts[idx : idx + micro_batch_size], num_return_sequences, temperature)
+            ]
+
+        self.tokenizer.padding_side = "left"
+        print("inside batched_generate")
+        print("prompt",prompts)
+        inputs = self.tokenizer(
+            prompts,
+            padding=True,
+            return_tensors="pt",
+        )
+        input_ids = inputs["input_ids"].to(self.device)
+        attention_mask = inputs["attention_mask"].to(self.device)
+
+        max_new_tokens = 20
+        do_sample = temperature > 0
+        num_return_sequences = num_return_sequences if num_return_sequences is not None else 1
+
+        with torch.no_grad():
+            outputs = self.model.generate(
+                input_ids=input_ids,
+                attention_mask=attention_mask,
+                max_new_tokens=max_new_tokens,
+                do_sample=do_sample,
+                temperature=temperature if do_sample else None,
+                num_return_sequences=num_return_sequences,
+                eos_token_id=self.tokenizer.eos_token_id,
+                pad_token_id=self.tokenizer.pad_token_id,
+            )
+
+        prompt_lengths = [x.sum().item() for x in attention_mask]
+        batch_size = len(prompts)
+        
+        print("outputs",outputs)
+
+        decoded = []
+        for i in range(outputs.shape[0]):
+            prompt_idx = i // num_return_sequences
+            prompt_len = prompt_lengths[prompt_idx]
+            decoded.append(
+                self.tokenizer.decode(
+                    outputs[i, prompt_len:],
+                    skip_special_tokens=True,
+                ).strip()
+            )
+            print("outputs.shape[0]",outputs.shape[0])
+            print("num_return_sequences",num_return_sequences)
+            print("prompt_len",prompt_len)
+            print("prompt_lengths",prompt_lengths)
+            print("decoded",decoded)
+            print("decoded1",
+                self.tokenizer.decode(
+                    outputs[i],
+                    skip_special_tokens=False,
+                ).strip()
+            )
+
+        if num_return_sequences == 1:
+            return decoded
+        else:
+            grouped = []
+            for i in range(batch_size):
+                start = i * num_return_sequences
+                end = (i + 1) * num_return_sequences
+                grouped.append(decoded[start:end])
+            return grouped
+        
+        
+    def answer(self, *questions) -> list[float]:
+        """
+        Answer questions given as individual string arguments.
+        """
+        # Convert each question
+        prompts = [self.format_prompt(q) for q in questions]
+        generations = self.batched_generate(prompts)
+        return [self.parse_answer(g) for g in generations]
+
+
+def test_model():
+    # The following code simply tests of the BaseLLM is able to complete text.
+    # It should produce garbage answers, but it should not crash.
+    # In my case it talks about cats eating cats, and dogs being happy.
+    testset = ["The cat went up", "The dog went down"]
+    model = BaseLLM()
+    for t in testset:
+        print("testing generate function")
+        print("input", t)
+        answer = model.generate(t)
+        print("output", answer)
+    answers = model.batched_generate(testset)
+    print(answers)
+
+
+if __name__ == "__main__":
+    from fire import Fire
+
+    Fire({"test": test_model})
+
+
+datagen.py:
+import json
+import re
+from .data import Dataset
+from .cot import CoTModel  # You may need to implement this or adapt BaseLLM
+from tqdm import tqdm
+
+def extract_answer(text):
+    # Extracts the answer from <answer>...</answer>
+    match = re.search(r"<answer>(.*?)</answer>", text)
+    if match:
+        try:
+            return float(match.group(1).strip())
+        except Exception:
+            return match.group(1).strip()
+    return None
+
+def is_correct(pred, gold, tol=1e-2):
+    # Compare floats with tolerance, or strings exactly
+    try:
+        return abs(float(pred) - float(gold)) < tol
+    except Exception:
+        return str(pred).strip() == str(gold).strip()
+
+def generate_dataset(output_json: str, oversample: int = 10, temperature: float = 0.6):
+    # 1. Load dataset
+    dataset = Dataset("train")
+    # 2. Load CoT model
+    llm = CoTModel()
+    results = []
+
+    for q, gold in tqdm(dataset, desc="Generating RFT data"):
+        # 3. Generate multiple completions
+        completions = llm.batched_generate(
+            [q] * oversample,
+            num_return_sequences=oversample,
+            
+        )
+        found = False
+        for comp in completions:
+            pred = extract_answer(comp)
+            if pred is not None and is_correct(pred, gold):
+                # Save as [question, gold, reasoning]
+                results.append([q, gold, comp])
+                found = True
+                break  # Only keep the first correct one (or remove break to keep all)
+        # If none correct, skip
+
+    # 4. Save to JSON
+    with open(output_json, "w") as f:
+        json.dump(results, f, indent=2)
+
+if __name__ == "__main__":
+    from fire import Fire
+    Fire(generate_dataset)
+
+cot.py:
+from .base_llm import BaseLLM
+
+
+class CoTModel(BaseLLM):
+    # def format_prompt(self, question: str) -> str:
+    #     """
+    #     Take a question and convert it into a chat template. The LLM will likely answer much
+    #     better if you provide a chat template. self.tokenizer.apply_chat_template can help here
+    #     """
+
+    #     raise NotImplementedError()
+    
+    def format_prompt(self, question: str) -> str:
+        """
+        Take a question and convert it into a chat template. The LLM will likely answer much
+        better if you provide a chat template. self.tokenizer.apply_chat_template can help here
+        """
+        # Example: "How many grams are there per 2 kg?" -> "1 kg = 1000 grams. 2 * 1000 = <answer>2000</answer>"
+        messages = [
+            {
+                "role": "system",
+                "content": "You are a helpful assistant that answers unit conversion questions. Be concise and show your reasoning step by step. Wrap the final answer in <answer></answer> tags."
+            },
+            {
+                "role": "user",
+                "content": "How many grams are there per 2 kg?"
+            },
+            {
+                "role": "assistant",
+                "content": "1 kg = 1000 grams. 2 * 1000 = <answer>2000</answer>"
+            },
+            {
+                "role": "user",
+                "content": question
+            }
+        ]
+        prompt = self.tokenizer.apply_chat_template(
+            messages, add_generation_prompt=True, tokenize=False
+        )
+        return prompt
+
+
+def load() -> CoTModel:
+    return CoTModel()
+
+
+def test_model():
+    from .data import Dataset, benchmark
+
+    testset = Dataset("valid")
+    model = CoTModel()
+    benchmark_result = benchmark(model, testset, 100)
+    print(f"{benchmark_result.accuracy=}  {benchmark_result.answer_rate=}")
+
+
+if __name__ == "__main__":
+    from fire import Fire
+
+    Fire({"test": test_model, "load": load})
+
+when running the following 
+ python -m homework.datagen generate_dataset --output_json=data/rft.json --oversample=10 --temperature=0.6
+
+below error message:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 189, in _run_module_as_main
+  File "<frozen runpy>", line 112, in _get_module_details
+  File "C:\Users\divya\OneDrive\Desktop\MSAI\ADL\homework3_v3\homework\__init__.py", line 1, in <module>
+    from .base_llm import BaseLLM as BaseLLM
+  File "C:\Users\divya\OneDrive\Desktop\MSAI\ADL\homework3_v3\homework\base_llm.py", line 233
+    temperature=temperature if do_sample else None,,
+                                                   ^
+SyntaxError: invalid syntax
+(.venv) PS C:\Users\divya\OneDrive\Desktop\MSAI\ADL\homework3_v3> python -m homework.datagen generate_dataset --output_json=data/rft.json --oversample=10 --temperature=0.6
+Generating RFT data:   0%|                                                                                        | 0/1000 [00:00<?, ?it/s]inside batched_generate
+prompt ['Can you change 2 hour to its equivalent in min?', 'Can you change 2 hour to its equivalent in min?', 'Can you change 2 hour to its equivalent in min?', 'Can you change 2 hour to its equivalent in min?', 'Can you change 2 hour to its equivalent in min?', 'Can you change 2 hour to its equivalent in min?', 'Can you change 2 hour to its equivalent in min?', 'Can you change 2 hour to its equivalent in min?', 'Can you change 2 hour to its equivalent in min?', 'Can you change 2 hour to its equivalent in min?']
+Generating RFT data:   0%|                                                                                        | 0/1000 [00:00<?, ?it/s] 
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\divya\OneDrive\Desktop\MSAI\ADL\homework3_v3\homework\datagen.py", line 54, in <module>
+    Fire(generate_dataset)
+  File "C:\Users\divya\OneDrive\Desktop\MSAI\ADL\homework3_v3\.venv\Lib\site-packages\fire\core.py", line 135, in Fire
+    component_trace = _Fire(component, args, parsed_flag_args, context, name)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\divya\OneDrive\Desktop\MSAI\ADL\homework3_v3\.venv\Lib\site-packages\fire\core.py", line 468, in _Fire
+    component, remaining_args = _CallAndUpdateTrace(
+                                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\divya\OneDrive\Desktop\MSAI\ADL\homework3_v3\.venv\Lib\site-packages\fire\core.py", line 684, in _CallAndUpdateTrace       
+    component = fn(*varargs, **kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\divya\OneDrive\Desktop\MSAI\ADL\homework3_v3\homework\datagen.py", line 33, in generate_dataset
+    completions = llm.batched_generate(
+                  ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\divya\OneDrive\Desktop\MSAI\ADL\homework3_v3\homework\base_llm.py", line 228, in batched_generate
+    outputs = self.model.generate(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\divya\OneDrive\Desktop\MSAI\ADL\homework3_v3\.venv\Lib\site-packages\torch\utils\_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\divya\OneDrive\Desktop\MSAI\ADL\homework3_v3\.venv\Lib\site-packages\transformers\generation\utils.py", line 2222, in generate
+    generation_config, model_kwargs = self._prepare_generation_config(
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\divya\OneDrive\Desktop\MSAI\ADL\homework3_v3\.venv\Lib\site-packages\transformers\generation\utils.py", line 1717, in _prepare_generation_config
+    model_kwargs = generation_config.update(**kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\divya\OneDrive\Desktop\MSAI\ADL\homework3_v3\.venv\Lib\site-packages\transformers\generation\configuration_utils.py", line 1327, in update
+    self.validate()
+  File "C:\Users\divya\OneDrive\Desktop\MSAI\ADL\homework3_v3\.venv\Lib\site-packages\transformers\generation\configuration_utils.py", line 755, in validate
+    raise ValueError(
+ValueError: Greedy methods without beam search do not support `num_return_sequences` different than 1 (got 10).
