@@ -1,0 +1,201 @@
+from .base_llm import BaseLLM
+from .data import Dataset, benchmark
+from peft import LoraConfig, get_peft_model
+from transformers import TrainingArguments, Trainer
+import torch
+
+def load() -> BaseLLM:
+    from pathlib import Path
+    from peft import PeftModel
+
+    model_name = "sft_model"
+    model_path = Path(__file__).parent / model_name
+
+    llm = BaseLLM()
+    llm.model = PeftModel.from_pretrained(llm.model, model_path).to(llm.device)
+    llm.model.eval()
+
+    return llm
+
+
+def tokenize(tokenizer, question: str, answer: str):
+    full_text = f"{question} {answer}{tokenizer.eos_token}"
+
+    tokenizer.padding_side = "right"
+    tokenizer.pad_token = tokenizer.eos_token
+    full = tokenizer(full_text, padding="max_length", truncation=True, max_length=128)
+
+    input_ids = full["input_ids"]
+    question_len = len(tokenizer(f"{question} ", add_special_tokens=False)["input_ids"]) - 1
+    
+
+    labels = [-100] * question_len + input_ids[question_len:]
+
+    for i in range(len(labels)):
+        if full["attention_mask"][i] == 0:
+            labels[i] = -100
+
+    full["labels"] = labels
+    return full
+
+def format_example(prompt: str, answer: str) -> dict[str, str]:
+    """
+    Construct a question / answer pair. Consider rounding the answer to make it easier for the LLM.
+    """
+    # Round the answer to 2 decimals for easier learning
+    try:
+        float_answer = round(float(answer), 2)
+    except Exception:
+        float_answer = answer
+    return {
+        "question": prompt,
+        # "answer": f"{float_answer}"
+        "answer": f"<answer>{float_answer}</answer>"
+    }
+
+class TokenizedDataset:
+    def __init__(self, tokenizer, data: Dataset, format_fn):
+        """
+        Use the
+        - BaseLLM.tokenizer
+        - Dataset
+        - format_fn which converts a data element into a dict with entries
+          - question: str
+          - answer: str
+        """
+        self.format_fn = format_fn
+        self.tokenizer = tokenizer
+        self.data = data
+
+    def __len__(self):
+        return len(self.data)
+
+    def __getitem__(self, idx):
+               
+        formated_data = self.format_fn(*self.data[idx])
+        # print("formatted_data",formated_data)
+        item = tokenize(self.tokenizer, **formated_data)
+        # Convert lists to tensors
+        return {k: torch.tensor(v) for k, v in item.items()}
+        # formated_data = self.format_fn(*self.data[idx])
+        # return tokenize(self.tokenizer, **formated_data)
+
+def train_model(
+    output_dir: str,
+    **kwargs,
+):
+    
+
+    # 1. Load training data
+    trainset = Dataset("train")
+
+    # 2. Load base model and tokenizer
+    llm = BaseLLM()
+    model = llm.model
+    tokenizer = llm.tokenizer
+
+    # 3. Add LoRA adapter
+    # Choose r so that the adapter is <20MB. For small models, r=8 or 16 is usually safe.
+    r = 8
+    lora_alpha = 32  # 4x r
+    lora_config = LoraConfig(
+        r=r,
+        lora_alpha=lora_alpha,
+        target_modules="all-linear",
+        bias="none",
+        task_type="CAUSAL_LM"
+    )
+    # model = get_peft_model(model, lora_config)
+    # if torch.cuda.is_available():
+    #     model.enable_input_require_grads()
+        
+    # model = get_peft_model(model, lora_config)
+    # if torch.cuda.is_available() or torch.backends.mps.is_available():
+    #     model.enable_input_require_grads()
+
+    model = get_peft_model(model, lora_config)
+    model.enable_input_require_grads()
+
+    # Explicitly set requires_grad = True for all adapter parameters
+    for name, param in model.named_parameters():
+        if param.requires_grad:
+            print(f"Trainable: {name}")
+
+    # if torch.cuda.is_available() or torch.backends.mps.is_available():
+    #     model.enable_input_require_grads()
+
+    # Check if any parameter has requires_grad=True, if not, raise an error
+    if not any(p.requires_grad for p in model.parameters()):
+        raise RuntimeError("No parameters have requires_grad=True. Training will fail.")
+
+
+
+    # 4. Prepare tokenized dataset
+    tokenized_dataset = TokenizedDataset(tokenizer, trainset, format_example)
+
+    # 5. Set up TrainingArguments
+    training_args = TrainingArguments(
+        output_dir=output_dir,
+        logging_dir=output_dir,
+        report_to="tensorboard",
+        per_device_train_batch_size=32,
+        num_train_epochs=50,
+        learning_rate=2e-4,
+        gradient_checkpointing=True,
+        save_strategy="epoch",
+        logging_steps=10,
+        remove_unused_columns=False,
+        fp16=torch.cuda.is_available(),
+        label_names=["labels"],
+    )
+
+    # 6. Initialize Trainer
+    trainer = Trainer(
+        model=model,
+        args=training_args,
+        train_dataset=tokenized_dataset,
+        tokenizer=tokenizer,
+    )
+    
+    # for name, param in model.named_parameters():
+    #     print(param.requires_grad)
+    #     if param.requires_grad:
+    #         print(name, param.shape)
+        
+    # sample = tokenized_dataset[0]
+    # print("start")
+    # print("sample",sample)
+    # print("end")
+    # print("input_ids:", sample["input_ids"])
+    # print("labels:", sample["labels"])
+    # print("decoded input:", tokenizer.decode(sample["input_ids"]))
+    # print("decoded labels:", [tokenizer.decode([i]) if i != -100 else "<mask>" for i in sample["labels"]])
+
+
+
+
+    # 7. Train
+    trainer.train()
+
+    # 8. Save LoRA adapter
+    trainer.save_model(output_dir)
+
+    # 9. Optionally test
+    test_model(output_dir)
+
+def test_model(ckpt_path: str):
+    testset = Dataset("valid")
+    llm = BaseLLM()
+
+    # Load the model with LoRA adapters
+    from peft import PeftModel
+
+    llm.model = PeftModel.from_pretrained(llm.model, ckpt_path).to(llm.device)
+
+    benchmark_result = benchmark(llm, testset, 100)
+    print(f"{benchmark_result.accuracy=}  {benchmark_result.answer_rate=}")
+
+if __name__ == "__main__":
+    from fire import Fire
+
+    Fire({"train": train_model, "test": test_model, "load": load})
