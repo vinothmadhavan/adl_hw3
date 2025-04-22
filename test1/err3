@@ -1,0 +1,696 @@
+/content/drive/MyDrive/adl_hw3/homework/sft.py:152: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+  0% 0/320 [00:00<?, ?it/s]`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.31}
+{'loss': 1.3918, 'grad_norm': nan, 'learning_rate': 0.00019875, 'epoch': 0.62}
+{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.00019875, 'epoch': 0.94}
+{'loss': 0.2835, 'grad_norm': nan, 'learning_rate': 0.000198125, 'epoch': 1.25}
+{'loss': 0.1945, 'grad_norm': nan, 'learning_rate': 0.00019750000000000003, 'epoch': 1.56}
+{'loss': 0.6965, 'grad_norm': nan, 'learning_rate': 0.00019625, 'epoch': 1.88}
+{'loss': 1.0846, 'grad_norm': nan, 'learning_rate': 0.00019375000000000002, 'epoch': 2.19}
+{'loss': 0.5259, 'grad_norm': nan, 'learning_rate': 0.00019250000000000002, 'epoch': 2.5}
+{'loss': 0.7159, 'grad_norm': 0.0, 'learning_rate': 0.000190625, 'epoch': 2.81}
+{'loss': 0.4031, 'grad_norm': nan, 'learning_rate': 0.00018875, 'epoch': 3.12}
+{'loss': 0.3573, 'grad_norm': nan, 'learning_rate': 0.0001875, 'epoch': 3.44}
+{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0001875, 'epoch': 3.75}
+{'loss': 0.9892, 'grad_norm': nan, 'learning_rate': 0.00018625, 'epoch': 4.06}
+{'loss': 0.1681, 'grad_norm': nan, 'learning_rate': 0.000185625, 'epoch': 4.38}
+{'loss': 0.5463, 'grad_norm': nan, 'learning_rate': 0.000184375, 'epoch': 4.69}
+{'loss': 0.3896, 'grad_norm': nan, 'learning_rate': 0.00018375, 'epoch': 5.0}
+{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.00018375, 'epoch': 5.31}
+{'loss': 0.2022, 'grad_norm': nan, 'learning_rate': 0.00018312500000000002, 'epoch': 5.62}
+{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.00018312500000000002, 'epoch': 5.94}
+{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.00018312500000000002, 'epoch': 6.25}
+{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.00018312500000000002, 'epoch': 6.56}
+{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.00018312500000000002, 'epoch': 6.88}
+{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.00018312500000000002, 'epoch': 7.19}
+{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.00018312500000000002, 'epoch': 7.5}
+{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.00018312500000000002, 'epoch': 7.81}
+{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.00018312500000000002, 'epoch': 8.12}
+{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.00018312500000000002, 'epoch': 8.44}
+{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.00018312500000000002, 'epoch': 8.75}
+{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.00018312500000000002, 'epoch': 9.06}
+{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.00018312500000000002, 'epoch': 9.38}
+{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.00018312500000000002, 'epoch': 9.69}
+{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.00018312500000000002, 'epoch': 10.0}
+{'train_runtime': 426.7387, 'train_samples_per_second': 23.434, 'train_steps_per_second': 0.75, 'train_loss': 0.24838830083608626, 'epoch': 10.0}
+100% 320/320 [07:06<00:00,  1.33s/it]
+LLM Running on Micro Batches 32:   0% 0/4 [00:00<?, ?it/s]inside batched_generate
+prompt ['How does 4 years measure up in terms of week?', 'What is the measurement of 3 kg when converted into pound?', 'How many MB is 2 G?', 'What is the equivalent of 2 kB in bit?', 'Convert 5 quart to pint?', 'How do we translate 5 gallon into fluid ounce?', 'Could you give the conversion from fluid ounce to millilitre for 4 units?', 'Can you provide the conversion value from kg to g for 6 units?', 'How do we translate 3 mi/h into m/s?', 'How much is 3 ft when converted to yd?', 'Can you change 6 miles to its equivalent in m?', 'How do we express 10 h in terms of second?', 'How do we express 2 kmh in terms of ft/s?', 'Convert the measurement of 9 kB into bit.', 'Express 2 B as a quantity of bit.', 'Could you provide the value of 8 week in day?', 'How do we express 10 h in terms of second?', 'What is the equivalent of 7 ft/s in kmh?', 'Please convert 1 m into ft.', 'How does 5 byte measure up in terms of bit?', 'How much is 5 litre when converted to milliliter?', 'Please convert 3 kg into pound.', 'Could you provide the value of 3 kg in gram?', 'How many milliliter make up 7 litre?', 'Could you give the conversion from year to day for 7 units?', 'What is the conversion from decades to month for 5 units?', 'Convert the measurement of 4 week into month.', 'How many gram are there per 3 ounce?', 'Can you change 4 month to its equivalent in h?', 'How do we translate 4 MB into KB?', 'How much is 6 mi/h when converted to m/s?', 'How do we express 1 kg in terms of ounce?']
+outputs tensor([[   2,    2,    2,  ...,    0,    0,    0],
+        [   2,    2,    2,  ...,    0,    0,    0],
+        [   2,    2,    2,  ...,    0,    0,    0],
+        ...,
+        [   2,    2,    2,  ...,    0,    0,    0],
+        [   2,    2, 2020,  ...,    0,    0,    0],
+        [   2,    2,    2,  ...,    0,    0,    0]], device='cuda:0')
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 12
+prompt_lengths [12, 13, 8, 12, 7, 11, 17, 15, 14, 12, 12, 13, 15, 11, 11, 12, 13, 14, 8, 12, 14, 8, 12, 12, 14, 13, 10, 10, 12, 10, 15, 12]
+decoded ['in terms of week?']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|><|im_end|>How does 4 years measure up in terms of week?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 13
+prompt_lengths [12, 13, 8, 12, 7, 11, 17, 15, 14, 12, 12, 13, 15, 11, 11, 12, 13, 14, 8, 12, 14, 8, 12, 12, 14, 13, 10, 10, 12, 10, 15, 12]
+decoded ['in terms of week?', 'converted into pound?']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|>What is the measurement of 3 kg when converted into pound?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 8
+prompt_lengths [12, 13, 8, 12, 7, 11, 17, 15, 14, 12, 12, 13, 15, 11, 11, 12, 13, 14, 8, 12, 14, 8, 12, 12, 14, 13, 10, 10, 12, 10, 15, 12]
+decoded ['in terms of week?', 'converted into pound?', 'How many MB is 2 G?']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|>How many MB is 2 G?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 12
+prompt_lengths [12, 13, 8, 12, 7, 11, 17, 15, 14, 12, 12, 13, 15, 11, 11, 12, 13, 14, 8, 12, 14, 8, 12, 12, 14, 13, 10, 10, 12, 10, 15, 12]
+decoded ['in terms of week?', 'converted into pound?', 'How many MB is 2 G?', 'kB in bit?']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|><|im_end|>What is the equivalent of 2 kB in bit?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 7
+prompt_lengths [12, 13, 8, 12, 7, 11, 17, 15, 14, 12, 12, 13, 15, 11, 11, 12, 13, 14, 8, 12, 14, 8, 12, 12, 14, 13, 10, 10, 12, 10, 15, 12]
+decoded ['in terms of week?', 'converted into pound?', 'How many MB is 2 G?', 'kB in bit?', 'Convert 5 quart to pint?']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|>Convert 5 quart to pint?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 11
+prompt_lengths [12, 13, 8, 12, 7, 11, 17, 15, 14, 12, 12, 13, 15, 11, 11, 12, 13, 14, 8, 12, 14, 8, 12, 12, 14, 13, 10, 10, 12, 10, 15, 12]
+decoded ['in terms of week?', 'converted into pound?', 'How many MB is 2 G?', 'kB in bit?', 'Convert 5 quart to pint?', '5 gallon into fluid ounce?']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|>How do we translate 5 gallon into fluid ounce?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 17
+prompt_lengths [12, 13, 8, 12, 7, 11, 17, 15, 14, 12, 12, 13, 15, 11, 11, 12, 13, 14, 8, 12, 14, 8, 12, 12, 14, 13, 10, 10, 12, 10, 15, 12]
+decoded ['in terms of week?', 'converted into pound?', 'How many MB is 2 G?', 'kB in bit?', 'Convert 5 quart to pint?', '5 gallon into fluid ounce?', '']
+decoded1 Could you give the conversion from fluid ounce to millilitre for 4 units?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 15
+prompt_lengths [12, 13, 8, 12, 7, 11, 17, 15, 14, 12, 12, 13, 15, 11, 11, 12, 13, 14, 8, 12, 14, 8, 12, 12, 14, 13, 10, 10, 12, 10, 15, 12]
+decoded ['in terms of week?', 'converted into pound?', 'How many MB is 2 G?', 'kB in bit?', 'Convert 5 quart to pint?', '5 gallon into fluid ounce?', '', 'units?']
+decoded1 <|im_end|><|im_end|>Can you provide the conversion value from kg to g for 6 units?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 14
+prompt_lengths [12, 13, 8, 12, 7, 11, 17, 15, 14, 12, 12, 13, 15, 11, 11, 12, 13, 14, 8, 12, 14, 8, 12, 12, 14, 13, 10, 10, 12, 10, 15, 12]
+decoded ['in terms of week?', 'converted into pound?', 'How many MB is 2 G?', 'kB in bit?', 'Convert 5 quart to pint?', '5 gallon into fluid ounce?', '', 'units?', '/s?']
+decoded1 <|im_end|><|im_end|><|im_end|>How do we translate 3 mi/h into m/s?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 12
+prompt_lengths [12, 13, 8, 12, 7, 11, 17, 15, 14, 12, 12, 13, 15, 11, 11, 12, 13, 14, 8, 12, 14, 8, 12, 12, 14, 13, 10, 10, 12, 10, 15, 12]
+decoded ['in terms of week?', 'converted into pound?', 'How many MB is 2 G?', 'kB in bit?', 'Convert 5 quart to pint?', '5 gallon into fluid ounce?', '', 'units?', '/s?', 'converted to yd?']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|><|im_end|>How much is 3 ft when converted to yd?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 12
+prompt_lengths [12, 13, 8, 12, 7, 11, 17, 15, 14, 12, 12, 13, 15, 11, 11, 12, 13, 14, 8, 12, 14, 8, 12, 12, 14, 13, 10, 10, 12, 10, 15, 12]
+decoded ['in terms of week?', 'converted into pound?', 'How many MB is 2 G?', 'kB in bit?', 'Convert 5 quart to pint?', '5 gallon into fluid ounce?', '', 'units?', '/s?', 'converted to yd?', 'its equivalent in m?']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|><|im_end|>Can you change 6 miles to its equivalent in m?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 13
+prompt_lengths [12, 13, 8, 12, 7, 11, 17, 15, 14, 12, 12, 13, 15, 11, 11, 12, 13, 14, 8, 12, 14, 8, 12, 12, 14, 13, 10, 10, 12, 10, 15, 12]
+decoded ['in terms of week?', 'converted into pound?', 'How many MB is 2 G?', 'kB in bit?', 'Convert 5 quart to pint?', '5 gallon into fluid ounce?', '', 'units?', '/s?', 'converted to yd?', 'its equivalent in m?', 'terms of second?']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|>How do we express 10 h in terms of second?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 15
+prompt_lengths [12, 13, 8, 12, 7, 11, 17, 15, 14, 12, 12, 13, 15, 11, 11, 12, 13, 14, 8, 12, 14, 8, 12, 12, 14, 13, 10, 10, 12, 10, 15, 12]
+decoded ['in terms of week?', 'converted into pound?', 'How many MB is 2 G?', 'kB in bit?', 'Convert 5 quart to pint?', '5 gallon into fluid ounce?', '', 'units?', '/s?', 'converted to yd?', 'its equivalent in m?', 'terms of second?', 's?']
+decoded1 <|im_end|><|im_end|>How do we express 2 kmh in terms of ft/s?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 11
+prompt_lengths [12, 13, 8, 12, 7, 11, 17, 15, 14, 12, 12, 13, 15, 11, 11, 12, 13, 14, 8, 12, 14, 8, 12, 12, 14, 13, 10, 10, 12, 10, 15, 12]
+decoded ['in terms of week?', 'converted into pound?', 'How many MB is 2 G?', 'kB in bit?', 'Convert 5 quart to pint?', '5 gallon into fluid ounce?', '', 'units?', '/s?', 'converted to yd?', 'its equivalent in m?', 'terms of second?', 's?', '9 kB into bit.']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|>Convert the measurement of 9 kB into bit.<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 11
+prompt_lengths [12, 13, 8, 12, 7, 11, 17, 15, 14, 12, 12, 13, 15, 11, 11, 12, 13, 14, 8, 12, 14, 8, 12, 12, 14, 13, 10, 10, 12, 10, 15, 12]
+decoded ['in terms of week?', 'converted into pound?', 'How many MB is 2 G?', 'kB in bit?', 'Convert 5 quart to pint?', '5 gallon into fluid ounce?', '', 'units?', '/s?', 'converted to yd?', 'its equivalent in m?', 'terms of second?', 's?', '9 kB into bit.', 'as a quantity of bit.']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|>Express 2 B as a quantity of bit.<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 12
+prompt_lengths [12, 13, 8, 12, 7, 11, 17, 15, 14, 12, 12, 13, 15, 11, 11, 12, 13, 14, 8, 12, 14, 8, 12, 12, 14, 13, 10, 10, 12, 10, 15, 12]
+decoded ['in terms of week?', 'converted into pound?', 'How many MB is 2 G?', 'kB in bit?', 'Convert 5 quart to pint?', '5 gallon into fluid ounce?', '', 'units?', '/s?', 'converted to yd?', 'its equivalent in m?', 'terms of second?', 's?', '9 kB into bit.', 'as a quantity of bit.', '8 week in day?']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|><|im_end|>Could you provide the value of 8 week in day?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 13
+prompt_lengths [12, 13, 8, 12, 7, 11, 17, 15, 14, 12, 12, 13, 15, 11, 11, 12, 13, 14, 8, 12, 14, 8, 12, 12, 14, 13, 10, 10, 12, 10, 15, 12]
+decoded ['in terms of week?', 'converted into pound?', 'How many MB is 2 G?', 'kB in bit?', 'Convert 5 quart to pint?', '5 gallon into fluid ounce?', '', 'units?', '/s?', 'converted to yd?', 'its equivalent in m?', 'terms of second?', 's?', '9 kB into bit.', 'as a quantity of bit.', '8 week in day?', 'terms of second?']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|>How do we express 10 h in terms of second?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 14
+prompt_lengths [12, 13, 8, 12, 7, 11, 17, 15, 14, 12, 12, 13, 15, 11, 11, 12, 13, 14, 8, 12, 14, 8, 12, 12, 14, 13, 10, 10, 12, 10, 15, 12]
+decoded ['in terms of week?', 'converted into pound?', 'How many MB is 2 G?', 'kB in bit?', 'Convert 5 quart to pint?', '5 gallon into fluid ounce?', '', 'units?', '/s?', 'converted to yd?', 'its equivalent in m?', 'terms of second?', 's?', '9 kB into bit.', 'as a quantity of bit.', '8 week in day?', 'terms of second?', 'kmh?']
+decoded1 <|im_end|><|im_end|><|im_end|>What is the equivalent of 7 ft/s in kmh?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 8
+prompt_lengths [12, 13, 8, 12, 7, 11, 17, 15, 14, 12, 12, 13, 15, 11, 11, 12, 13, 14, 8, 12, 14, 8, 12, 12, 14, 13, 10, 10, 12, 10, 15, 12]
+decoded ['in terms of week?', 'converted into pound?', 'How many MB is 2 G?', 'kB in bit?', 'Convert 5 quart to pint?', '5 gallon into fluid ounce?', '', 'units?', '/s?', 'converted to yd?', 'its equivalent in m?', 'terms of second?', 's?', '9 kB into bit.', 'as a quantity of bit.', '8 week in day?', 'terms of second?', 'kmh?', 'Please convert 1 m into ft.']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|>Please convert 1 m into ft.<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 12
+prompt_lengths [12, 13, 8, 12, 7, 11, 17, 15, 14, 12, 12, 13, 15, 11, 11, 12, 13, 14, 8, 12, 14, 8, 12, 12, 14, 13, 10, 10, 12, 10, 15, 12]
+decoded ['in terms of week?', 'converted into pound?', 'How many MB is 2 G?', 'kB in bit?', 'Convert 5 quart to pint?', '5 gallon into fluid ounce?', '', 'units?', '/s?', 'converted to yd?', 'its equivalent in m?', 'terms of second?', 's?', '9 kB into bit.', 'as a quantity of bit.', '8 week in day?', 'terms of second?', 'kmh?', 'Please convert 1 m into ft.', 'in terms of bit?']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|><|im_end|>How does 5 byte measure up in terms of bit?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 14
+prompt_lengths [12, 13, 8, 12, 7, 11, 17, 15, 14, 12, 12, 13, 15, 11, 11, 12, 13, 14, 8, 12, 14, 8, 12, 12, 14, 13, 10, 10, 12, 10, 15, 12]
+decoded ['in terms of week?', 'converted into pound?', 'How many MB is 2 G?', 'kB in bit?', 'Convert 5 quart to pint?', '5 gallon into fluid ounce?', '', 'units?', '/s?', 'converted to yd?', 'its equivalent in m?', 'terms of second?', 's?', '9 kB into bit.', 'as a quantity of bit.', '8 week in day?', 'terms of second?', 'kmh?', 'Please convert 1 m into ft.', 'in terms of bit?', 'iliter?']
+decoded1 <|im_end|><|im_end|><|im_end|>How much is 5 litre when converted to milliliter?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 8
+prompt_lengths [12, 13, 8, 12, 7, 11, 17, 15, 14, 12, 12, 13, 15, 11, 11, 12, 13, 14, 8, 12, 14, 8, 12, 12, 14, 13, 10, 10, 12, 10, 15, 12]
+decoded ['in terms of week?', 'converted into pound?', 'How many MB is 2 G?', 'kB in bit?', 'Convert 5 quart to pint?', '5 gallon into fluid ounce?', '', 'units?', '/s?', 'converted to yd?', 'its equivalent in m?', 'terms of second?', 's?', '9 kB into bit.', 'as a quantity of bit.', '8 week in day?', 'terms of second?', 'kmh?', 'Please convert 1 m into ft.', 'in terms of bit?', 'iliter?', 'Please convert 3 kg into pound.']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|>Please convert 3 kg into pound.<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 12
+prompt_lengths [12, 13, 8, 12, 7, 11, 17, 15, 14, 12, 12, 13, 15, 11, 11, 12, 13, 14, 8, 12, 14, 8, 12, 12, 14, 13, 10, 10, 12, 10, 15, 12]
+decoded ['in terms of week?', 'converted into pound?', 'How many MB is 2 G?', 'kB in bit?', 'Convert 5 quart to pint?', '5 gallon into fluid ounce?', '', 'units?', '/s?', 'converted to yd?', 'its equivalent in m?', 'terms of second?', 's?', '9 kB into bit.', 'as a quantity of bit.', '8 week in day?', 'terms of second?', 'kmh?', 'Please convert 1 m into ft.', 'in terms of bit?', 'iliter?', 'Please convert 3 kg into pound.', '3 kg in gram?']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|><|im_end|>Could you provide the value of 3 kg in gram?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 12
+prompt_lengths [12, 13, 8, 12, 7, 11, 17, 15, 14, 12, 12, 13, 15, 11, 11, 12, 13, 14, 8, 12, 14, 8, 12, 12, 14, 13, 10, 10, 12, 10, 15, 12]
+decoded ['in terms of week?', 'converted into pound?', 'How many MB is 2 G?', 'kB in bit?', 'Convert 5 quart to pint?', '5 gallon into fluid ounce?', '', 'units?', '/s?', 'converted to yd?', 'its equivalent in m?', 'terms of second?', 's?', '9 kB into bit.', 'as a quantity of bit.', '8 week in day?', 'terms of second?', 'kmh?', 'Please convert 1 m into ft.', 'in terms of bit?', 'iliter?', 'Please convert 3 kg into pound.', '3 kg in gram?', '7 litre?']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|><|im_end|>How many milliliter make up 7 litre?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 14
+prompt_lengths [12, 13, 8, 12, 7, 11, 17, 15, 14, 12, 12, 13, 15, 11, 11, 12, 13, 14, 8, 12, 14, 8, 12, 12, 14, 13, 10, 10, 12, 10, 15, 12]
+decoded ['in terms of week?', 'converted into pound?', 'How many MB is 2 G?', 'kB in bit?', 'Convert 5 quart to pint?', '5 gallon into fluid ounce?', '', 'units?', '/s?', 'converted to yd?', 'its equivalent in m?', 'terms of second?', 's?', '9 kB into bit.', 'as a quantity of bit.', '8 week in day?', 'terms of second?', 'kmh?', 'Please convert 1 m into ft.', 'in terms of bit?', 'iliter?', 'Please convert 3 kg into pound.', '3 kg in gram?', '7 litre?', '7 units?']
+decoded1 <|im_end|><|im_end|><|im_end|>Could you give the conversion from year to day for 7 units?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 13
+prompt_lengths [12, 13, 8, 12, 7, 11, 17, 15, 14, 12, 12, 13, 15, 11, 11, 12, 13, 14, 8, 12, 14, 8, 12, 12, 14, 13, 10, 10, 12, 10, 15, 12]
+decoded ['in terms of week?', 'converted into pound?', 'How many MB is 2 G?', 'kB in bit?', 'Convert 5 quart to pint?', '5 gallon into fluid ounce?', '', 'units?', '/s?', 'converted to yd?', 'its equivalent in m?', 'terms of second?', 's?', '9 kB into bit.', 'as a quantity of bit.', '8 week in day?', 'terms of second?', 'kmh?', 'Please convert 1 m into ft.', 'in terms of bit?', 'iliter?', 'Please convert 3 kg into pound.', '3 kg in gram?', '7 litre?', '7 units?', '5 units?']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|>What is the conversion from decades to month for 5 units?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 10
+prompt_lengths [12, 13, 8, 12, 7, 11, 17, 15, 14, 12, 12, 13, 15, 11, 11, 12, 13, 14, 8, 12, 14, 8, 12, 12, 14, 13, 10, 10, 12, 10, 15, 12]
+decoded ['in terms of week?', 'converted into pound?', 'How many MB is 2 G?', 'kB in bit?', 'Convert 5 quart to pint?', '5 gallon into fluid ounce?', '', 'units?', '/s?', 'converted to yd?', 'its equivalent in m?', 'terms of second?', 's?', '9 kB into bit.', 'as a quantity of bit.', '8 week in day?', 'terms of second?', 'kmh?', 'Please convert 1 m into ft.', 'in terms of bit?', 'iliter?', 'Please convert 3 kg into pound.', '3 kg in gram?', '7 litre?', '7 units?', '5 units?', 'of 4 week into month.']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|>Convert the measurement of 4 week into month.<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 10
+prompt_lengths [12, 13, 8, 12, 7, 11, 17, 15, 14, 12, 12, 13, 15, 11, 11, 12, 13, 14, 8, 12, 14, 8, 12, 12, 14, 13, 10, 10, 12, 10, 15, 12]
+decoded ['in terms of week?', 'converted into pound?', 'How many MB is 2 G?', 'kB in bit?', 'Convert 5 quart to pint?', '5 gallon into fluid ounce?', '', 'units?', '/s?', 'converted to yd?', 'its equivalent in m?', 'terms of second?', 's?', '9 kB into bit.', 'as a quantity of bit.', '8 week in day?', 'terms of second?', 'kmh?', 'Please convert 1 m into ft.', 'in terms of bit?', 'iliter?', 'Please convert 3 kg into pound.', '3 kg in gram?', '7 litre?', '7 units?', '5 units?', 'of 4 week into month.', 'are there per 3 ounce?']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|>How many gram are there per 3 ounce?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 12
+prompt_lengths [12, 13, 8, 12, 7, 11, 17, 15, 14, 12, 12, 13, 15, 11, 11, 12, 13, 14, 8, 12, 14, 8, 12, 12, 14, 13, 10, 10, 12, 10, 15, 12]
+decoded ['in terms of week?', 'converted into pound?', 'How many MB is 2 G?', 'kB in bit?', 'Convert 5 quart to pint?', '5 gallon into fluid ounce?', '', 'units?', '/s?', 'converted to yd?', 'its equivalent in m?', 'terms of second?', 's?', '9 kB into bit.', 'as a quantity of bit.', '8 week in day?', 'terms of second?', 'kmh?', 'Please convert 1 m into ft.', 'in terms of bit?', 'iliter?', 'Please convert 3 kg into pound.', '3 kg in gram?', '7 litre?', '7 units?', '5 units?', 'of 4 week into month.', 'are there per 3 ounce?', 'its equivalent in h?']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|><|im_end|>Can you change 4 month to its equivalent in h?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 10
+prompt_lengths [12, 13, 8, 12, 7, 11, 17, 15, 14, 12, 12, 13, 15, 11, 11, 12, 13, 14, 8, 12, 14, 8, 12, 12, 14, 13, 10, 10, 12, 10, 15, 12]
+decoded ['in terms of week?', 'converted into pound?', 'How many MB is 2 G?', 'kB in bit?', 'Convert 5 quart to pint?', '5 gallon into fluid ounce?', '', 'units?', '/s?', 'converted to yd?', 'its equivalent in m?', 'terms of second?', 's?', '9 kB into bit.', 'as a quantity of bit.', '8 week in day?', 'terms of second?', 'kmh?', 'Please convert 1 m into ft.', 'in terms of bit?', 'iliter?', 'Please convert 3 kg into pound.', '3 kg in gram?', '7 litre?', '7 units?', '5 units?', 'of 4 week into month.', 'are there per 3 ounce?', 'its equivalent in h?', 'translate 4 MB into KB?']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|>How do we translate 4 MB into KB?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 15
+prompt_lengths [12, 13, 8, 12, 7, 11, 17, 15, 14, 12, 12, 13, 15, 11, 11, 12, 13, 14, 8, 12, 14, 8, 12, 12, 14, 13, 10, 10, 12, 10, 15, 12]
+decoded ['in terms of week?', 'converted into pound?', 'How many MB is 2 G?', 'kB in bit?', 'Convert 5 quart to pint?', '5 gallon into fluid ounce?', '', 'units?', '/s?', 'converted to yd?', 'its equivalent in m?', 'terms of second?', 's?', '9 kB into bit.', 'as a quantity of bit.', '8 week in day?', 'terms of second?', 'kmh?', 'Please convert 1 m into ft.', 'in terms of bit?', 'iliter?', 'Please convert 3 kg into pound.', '3 kg in gram?', '7 litre?', '7 units?', '5 units?', 'of 4 week into month.', 'are there per 3 ounce?', 'its equivalent in h?', 'translate 4 MB into KB?', 's?']
+decoded1 <|im_end|><|im_end|>How much is 6 mi/h when converted to m/s?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 12
+prompt_lengths [12, 13, 8, 12, 7, 11, 17, 15, 14, 12, 12, 13, 15, 11, 11, 12, 13, 14, 8, 12, 14, 8, 12, 12, 14, 13, 10, 10, 12, 10, 15, 12]
+decoded ['in terms of week?', 'converted into pound?', 'How many MB is 2 G?', 'kB in bit?', 'Convert 5 quart to pint?', '5 gallon into fluid ounce?', '', 'units?', '/s?', 'converted to yd?', 'its equivalent in m?', 'terms of second?', 's?', '9 kB into bit.', 'as a quantity of bit.', '8 week in day?', 'terms of second?', 'kmh?', 'Please convert 1 m into ft.', 'in terms of bit?', 'iliter?', 'Please convert 3 kg into pound.', '3 kg in gram?', '7 litre?', '7 units?', '5 units?', 'of 4 week into month.', 'are there per 3 ounce?', 'its equivalent in h?', 'translate 4 MB into KB?', 's?', 'in terms of ounce?']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|><|im_end|>How do we express 1 kg in terms of ounce?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+LLM Running on Micro Batches 32:  25% 1/4 [00:05<00:15,  5.14s/it]inside batched_generate
+prompt ['How much is 7 km/h when converted to ft/s?', 'Convert the measurement of 7 meter into cm.', 'Convert the measurement of 4 m/s into in/s.', 'How does 5 ton measure up in terms of kg?', 'How does 5 m measure up in terms of cm?', 'How do we translate 7 KB into bit?', 'How do we express 3 meter in terms of in?', 'What is the measurement of 2 kg when converted into g?', 'Convert the measurement of 3 GB into MB.', 'How many ounce is 6 quart?', 'Please convert 5 ft into m.', 'Express 5 pound as a quantity of ounce.', 'Can you provide the conversion value from kg to pound for 1 units?', 'What is the equivalent of 7 kB in byte?', 'How many kg are there per 7 ton?', 'Could you give the conversion from litre to gallon for 10 units?', 'How many litre is 4 quart?', 'Could you give the conversion from quart to gallon for 10 units?', 'What is the conversion from century to decades for 3 units?', 'How many km is 2 miles?', 'What is 1 GB in M?', 'How does 2 kmh measure up in terms of in/s?', 'How many kg make up 1 pound?', 'Can you change 2 gallon to its equivalent in l?', 'Express 2 cm as a quantity of in.', 'How do we express 8 bit in terms of B?', 'Could you convert 5 century to its corresponding value in months?', 'What is the conversion of 3 yd to mm?', 'How much is 3 m when converted to mm?', 'Could you convert 7 fluid ounce to its corresponding value in mL?', 'How do we translate 1 KB into byte?', 'How do we express 5 kB in terms of byte?']
+outputs tensor([[    2,  2020,  1083,  ...,     0,     0,     0],
+        [    2,     2,     2,  ...,     0,     0,     0],
+        [    2,     2, 37983,  ...,     0,     0,     0],
+        ...,
+        [    2,     2, 23855,  ...,     0,     0,     0],
+        [    2,     2,     2,  ...,     0,     0,     0],
+        [    2,     2,     2,  ...,     0,     0,     0]], device='cuda:0')
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 15
+prompt_lengths [15, 10, 14, 12, 12, 10, 12, 13, 10, 8, 8, 11, 15, 12, 10, 16, 9, 15, 13, 8, 8, 15, 9, 12, 11, 12, 13, 12, 11, 14, 10, 13]
+decoded ['?']
+decoded1 <|im_end|>How much is 7 km/h when converted to ft/s?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 10
+prompt_lengths [15, 10, 14, 12, 12, 10, 12, 13, 10, 8, 8, 11, 15, 12, 10, 16, 9, 15, 13, 8, 8, 15, 9, 12, 11, 12, 13, 12, 11, 14, 10, 13]
+decoded ['?', '7 meter into cm.']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|>Convert the measurement of 7 meter into cm.<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 14
+prompt_lengths [15, 10, 14, 12, 12, 10, 12, 13, 10, 8, 8, 11, 15, 12, 10, 16, 9, 15, 13, 8, 8, 15, 9, 12, 11, 12, 13, 12, 11, 14, 10, 13]
+decoded ['?', '7 meter into cm.', 's.']
+decoded1 <|im_end|><|im_end|>Convert the measurement of 4 m/s into in/s.<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 12
+prompt_lengths [15, 10, 14, 12, 12, 10, 12, 13, 10, 8, 8, 11, 15, 12, 10, 16, 9, 15, 13, 8, 8, 15, 9, 12, 11, 12, 13, 12, 11, 14, 10, 13]
+decoded ['?', '7 meter into cm.', 's.', 'terms of kg?']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|>How does 5 ton measure up in terms of kg?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 12
+prompt_lengths [15, 10, 14, 12, 12, 10, 12, 13, 10, 8, 8, 11, 15, 12, 10, 16, 9, 15, 13, 8, 8, 15, 9, 12, 11, 12, 13, 12, 11, 14, 10, 13]
+decoded ['?', '7 meter into cm.', 's.', 'terms of kg?', 'terms of cm?']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|>How does 5 m measure up in terms of cm?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 10
+prompt_lengths [15, 10, 14, 12, 12, 10, 12, 13, 10, 8, 8, 11, 15, 12, 10, 16, 9, 15, 13, 8, 8, 15, 9, 12, 11, 12, 13, 12, 11, 14, 10, 13]
+decoded ['?', '7 meter into cm.', 's.', 'terms of kg?', 'terms of cm?', '7 KB into bit?']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|>How do we translate 7 KB into bit?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 12
+prompt_lengths [15, 10, 14, 12, 12, 10, 12, 13, 10, 8, 8, 11, 15, 12, 10, 16, 9, 15, 13, 8, 8, 15, 9, 12, 11, 12, 13, 12, 11, 14, 10, 13]
+decoded ['?', '7 meter into cm.', 's.', 'terms of kg?', 'terms of cm?', '7 KB into bit?', 'terms of in?']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|>How do we express 3 meter in terms of in?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 13
+prompt_lengths [15, 10, 14, 12, 12, 10, 12, 13, 10, 8, 8, 11, 15, 12, 10, 16, 9, 15, 13, 8, 8, 15, 9, 12, 11, 12, 13, 12, 11, 14, 10, 13]
+decoded ['?', '7 meter into cm.', 's.', 'terms of kg?', 'terms of cm?', '7 KB into bit?', 'terms of in?', 'into g?']
+decoded1 <|im_end|><|im_end|><|im_end|>What is the measurement of 2 kg when converted into g?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 10
+prompt_lengths [15, 10, 14, 12, 12, 10, 12, 13, 10, 8, 8, 11, 15, 12, 10, 16, 9, 15, 13, 8, 8, 15, 9, 12, 11, 12, 13, 12, 11, 14, 10, 13]
+decoded ['?', '7 meter into cm.', 's.', 'terms of kg?', 'terms of cm?', '7 KB into bit?', 'terms of in?', 'into g?', '3 GB into MB.']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|>Convert the measurement of 3 GB into MB.<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 8
+prompt_lengths [15, 10, 14, 12, 12, 10, 12, 13, 10, 8, 8, 11, 15, 12, 10, 16, 9, 15, 13, 8, 8, 15, 9, 12, 11, 12, 13, 12, 11, 14, 10, 13]
+decoded ['?', '7 meter into cm.', 's.', 'terms of kg?', 'terms of cm?', '7 KB into bit?', 'terms of in?', 'into g?', '3 GB into MB.', 'How many ounce is 6 quart?']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|>How many ounce is 6 quart?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 8
+prompt_lengths [15, 10, 14, 12, 12, 10, 12, 13, 10, 8, 8, 11, 15, 12, 10, 16, 9, 15, 13, 8, 8, 15, 9, 12, 11, 12, 13, 12, 11, 14, 10, 13]
+decoded ['?', '7 meter into cm.', 's.', 'terms of kg?', 'terms of cm?', '7 KB into bit?', 'terms of in?', 'into g?', '3 GB into MB.', 'How many ounce is 6 quart?', 'Please convert 5 ft into m.']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|>Please convert 5 ft into m.<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 11
+prompt_lengths [15, 10, 14, 12, 12, 10, 12, 13, 10, 8, 8, 11, 15, 12, 10, 16, 9, 15, 13, 8, 8, 15, 9, 12, 11, 12, 13, 12, 11, 14, 10, 13]
+decoded ['?', '7 meter into cm.', 's.', 'terms of kg?', 'terms of cm?', '7 KB into bit?', 'terms of in?', 'into g?', '3 GB into MB.', 'How many ounce is 6 quart?', 'Please convert 5 ft into m.', 'a quantity of ounce.']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|><|im_end|>Express 5 pound as a quantity of ounce.<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 15
+prompt_lengths [15, 10, 14, 12, 12, 10, 12, 13, 10, 8, 8, 11, 15, 12, 10, 16, 9, 15, 13, 8, 8, 15, 9, 12, 11, 12, 13, 12, 11, 14, 10, 13]
+decoded ['?', '7 meter into cm.', 's.', 'terms of kg?', 'terms of cm?', '7 KB into bit?', 'terms of in?', 'into g?', '3 GB into MB.', 'How many ounce is 6 quart?', 'Please convert 5 ft into m.', 'a quantity of ounce.', '?']
+decoded1 <|im_end|>Can you provide the conversion value from kg to pound for 1 units?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 12
+prompt_lengths [15, 10, 14, 12, 12, 10, 12, 13, 10, 8, 8, 11, 15, 12, 10, 16, 9, 15, 13, 8, 8, 15, 9, 12, 11, 12, 13, 12, 11, 14, 10, 13]
+decoded ['?', '7 meter into cm.', 's.', 'terms of kg?', 'terms of cm?', '7 KB into bit?', 'terms of in?', 'into g?', '3 GB into MB.', 'How many ounce is 6 quart?', 'Please convert 5 ft into m.', 'a quantity of ounce.', '?', 'B in byte?']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|>What is the equivalent of 7 kB in byte?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 10
+prompt_lengths [15, 10, 14, 12, 12, 10, 12, 13, 10, 8, 8, 11, 15, 12, 10, 16, 9, 15, 13, 8, 8, 15, 9, 12, 11, 12, 13, 12, 11, 14, 10, 13]
+decoded ['?', '7 meter into cm.', 's.', 'terms of kg?', 'terms of cm?', '7 KB into bit?', 'terms of in?', 'into g?', '3 GB into MB.', 'How many ounce is 6 quart?', 'Please convert 5 ft into m.', 'a quantity of ounce.', '?', 'B in byte?', 'there per 7 ton?']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|>How many kg are there per 7 ton?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 16
+prompt_lengths [15, 10, 14, 12, 12, 10, 12, 13, 10, 8, 8, 11, 15, 12, 10, 16, 9, 15, 13, 8, 8, 15, 9, 12, 11, 12, 13, 12, 11, 14, 10, 13]
+decoded ['?', '7 meter into cm.', 's.', 'terms of kg?', 'terms of cm?', '7 KB into bit?', 'terms of in?', 'into g?', '3 GB into MB.', 'How many ounce is 6 quart?', 'Please convert 5 ft into m.', 'a quantity of ounce.', '?', 'B in byte?', 'there per 7 ton?', '']
+decoded1 Could you give the conversion from litre to gallon for 10 units?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 9
+prompt_lengths [15, 10, 14, 12, 12, 10, 12, 13, 10, 8, 8, 11, 15, 12, 10, 16, 9, 15, 13, 8, 8, 15, 9, 12, 11, 12, 13, 12, 11, 14, 10, 13]
+decoded ['?', '7 meter into cm.', 's.', 'terms of kg?', 'terms of cm?', '7 KB into bit?', 'terms of in?', 'into g?', '3 GB into MB.', 'How many ounce is 6 quart?', 'Please convert 5 ft into m.', 'a quantity of ounce.', '?', 'B in byte?', 'there per 7 ton?', '', 'litre is 4 quart?']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|>How many litre is 4 quart?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 15
+prompt_lengths [15, 10, 14, 12, 12, 10, 12, 13, 10, 8, 8, 11, 15, 12, 10, 16, 9, 15, 13, 8, 8, 15, 9, 12, 11, 12, 13, 12, 11, 14, 10, 13]
+decoded ['?', '7 meter into cm.', 's.', 'terms of kg?', 'terms of cm?', '7 KB into bit?', 'terms of in?', 'into g?', '3 GB into MB.', 'How many ounce is 6 quart?', 'Please convert 5 ft into m.', 'a quantity of ounce.', '?', 'B in byte?', 'there per 7 ton?', '', 'litre is 4 quart?', '?']
+decoded1 <|im_end|>Could you give the conversion from quart to gallon for 10 units?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 13
+prompt_lengths [15, 10, 14, 12, 12, 10, 12, 13, 10, 8, 8, 11, 15, 12, 10, 16, 9, 15, 13, 8, 8, 15, 9, 12, 11, 12, 13, 12, 11, 14, 10, 13]
+decoded ['?', '7 meter into cm.', 's.', 'terms of kg?', 'terms of cm?', '7 KB into bit?', 'terms of in?', 'into g?', '3 GB into MB.', 'How many ounce is 6 quart?', 'Please convert 5 ft into m.', 'a quantity of ounce.', '?', 'B in byte?', 'there per 7 ton?', '', 'litre is 4 quart?', '?', '3 units?']
+decoded1 <|im_end|><|im_end|><|im_end|>What is the conversion from century to decades for 3 units?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 8
+prompt_lengths [15, 10, 14, 12, 12, 10, 12, 13, 10, 8, 8, 11, 15, 12, 10, 16, 9, 15, 13, 8, 8, 15, 9, 12, 11, 12, 13, 12, 11, 14, 10, 13]
+decoded ['?', '7 meter into cm.', 's.', 'terms of kg?', 'terms of cm?', '7 KB into bit?', 'terms of in?', 'into g?', '3 GB into MB.', 'How many ounce is 6 quart?', 'Please convert 5 ft into m.', 'a quantity of ounce.', '?', 'B in byte?', 'there per 7 ton?', '', 'litre is 4 quart?', '?', '3 units?', 'How many km is 2 miles?']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|>How many km is 2 miles?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 8
+prompt_lengths [15, 10, 14, 12, 12, 10, 12, 13, 10, 8, 8, 11, 15, 12, 10, 16, 9, 15, 13, 8, 8, 15, 9, 12, 11, 12, 13, 12, 11, 14, 10, 13]
+decoded ['?', '7 meter into cm.', 's.', 'terms of kg?', 'terms of cm?', '7 KB into bit?', 'terms of in?', 'into g?', '3 GB into MB.', 'How many ounce is 6 quart?', 'Please convert 5 ft into m.', 'a quantity of ounce.', '?', 'B in byte?', 'there per 7 ton?', '', 'litre is 4 quart?', '?', '3 units?', 'How many km is 2 miles?', 'What is 1 GB in M?']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|>What is 1 GB in M?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 15
+prompt_lengths [15, 10, 14, 12, 12, 10, 12, 13, 10, 8, 8, 11, 15, 12, 10, 16, 9, 15, 13, 8, 8, 15, 9, 12, 11, 12, 13, 12, 11, 14, 10, 13]
+decoded ['?', '7 meter into cm.', 's.', 'terms of kg?', 'terms of cm?', '7 KB into bit?', 'terms of in?', 'into g?', '3 GB into MB.', 'How many ounce is 6 quart?', 'Please convert 5 ft into m.', 'a quantity of ounce.', '?', 'B in byte?', 'there per 7 ton?', '', 'litre is 4 quart?', '?', '3 units?', 'How many km is 2 miles?', 'What is 1 GB in M?', '?']
+decoded1 <|im_end|>How does 2 kmh measure up in terms of in/s?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 9
+prompt_lengths [15, 10, 14, 12, 12, 10, 12, 13, 10, 8, 8, 11, 15, 12, 10, 16, 9, 15, 13, 8, 8, 15, 9, 12, 11, 12, 13, 12, 11, 14, 10, 13]
+decoded ['?', '7 meter into cm.', 's.', 'terms of kg?', 'terms of cm?', '7 KB into bit?', 'terms of in?', 'into g?', '3 GB into MB.', 'How many ounce is 6 quart?', 'Please convert 5 ft into m.', 'a quantity of ounce.', '?', 'B in byte?', 'there per 7 ton?', '', 'litre is 4 quart?', '?', '3 units?', 'How many km is 2 miles?', 'What is 1 GB in M?', '?', 'kg make up 1 pound?']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|>How many kg make up 1 pound?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 12
+prompt_lengths [15, 10, 14, 12, 12, 10, 12, 13, 10, 8, 8, 11, 15, 12, 10, 16, 9, 15, 13, 8, 8, 15, 9, 12, 11, 12, 13, 12, 11, 14, 10, 13]
+decoded ['?', '7 meter into cm.', 's.', 'terms of kg?', 'terms of cm?', '7 KB into bit?', 'terms of in?', 'into g?', '3 GB into MB.', 'How many ounce is 6 quart?', 'Please convert 5 ft into m.', 'a quantity of ounce.', '?', 'B in byte?', 'there per 7 ton?', '', 'litre is 4 quart?', '?', '3 units?', 'How many km is 2 miles?', 'What is 1 GB in M?', '?', 'kg make up 1 pound?', 'equivalent in l?']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|>Can you change 2 gallon to its equivalent in l?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 11
+prompt_lengths [15, 10, 14, 12, 12, 10, 12, 13, 10, 8, 8, 11, 15, 12, 10, 16, 9, 15, 13, 8, 8, 15, 9, 12, 11, 12, 13, 12, 11, 14, 10, 13]
+decoded ['?', '7 meter into cm.', 's.', 'terms of kg?', 'terms of cm?', '7 KB into bit?', 'terms of in?', 'into g?', '3 GB into MB.', 'How many ounce is 6 quart?', 'Please convert 5 ft into m.', 'a quantity of ounce.', '?', 'B in byte?', 'there per 7 ton?', '', 'litre is 4 quart?', '?', '3 units?', 'How many km is 2 miles?', 'What is 1 GB in M?', '?', 'kg make up 1 pound?', 'equivalent in l?', 'a quantity of in.']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|><|im_end|>Express 2 cm as a quantity of in.<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 12
+prompt_lengths [15, 10, 14, 12, 12, 10, 12, 13, 10, 8, 8, 11, 15, 12, 10, 16, 9, 15, 13, 8, 8, 15, 9, 12, 11, 12, 13, 12, 11, 14, 10, 13]
+decoded ['?', '7 meter into cm.', 's.', 'terms of kg?', 'terms of cm?', '7 KB into bit?', 'terms of in?', 'into g?', '3 GB into MB.', 'How many ounce is 6 quart?', 'Please convert 5 ft into m.', 'a quantity of ounce.', '?', 'B in byte?', 'there per 7 ton?', '', 'litre is 4 quart?', '?', '3 units?', 'How many km is 2 miles?', 'What is 1 GB in M?', '?', 'kg make up 1 pound?', 'equivalent in l?', 'a quantity of in.', 'terms of B?']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|>How do we express 8 bit in terms of B?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 13
+prompt_lengths [15, 10, 14, 12, 12, 10, 12, 13, 10, 8, 8, 11, 15, 12, 10, 16, 9, 15, 13, 8, 8, 15, 9, 12, 11, 12, 13, 12, 11, 14, 10, 13]
+decoded ['?', '7 meter into cm.', 's.', 'terms of kg?', 'terms of cm?', '7 KB into bit?', 'terms of in?', 'into g?', '3 GB into MB.', 'How many ounce is 6 quart?', 'Please convert 5 ft into m.', 'a quantity of ounce.', '?', 'B in byte?', 'there per 7 ton?', '', 'litre is 4 quart?', '?', '3 units?', 'How many km is 2 miles?', 'What is 1 GB in M?', '?', 'kg make up 1 pound?', 'equivalent in l?', 'a quantity of in.', 'terms of B?', 'in months?']
+decoded1 <|im_end|><|im_end|><|im_end|>Could you convert 5 century to its corresponding value in months?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 12
+prompt_lengths [15, 10, 14, 12, 12, 10, 12, 13, 10, 8, 8, 11, 15, 12, 10, 16, 9, 15, 13, 8, 8, 15, 9, 12, 11, 12, 13, 12, 11, 14, 10, 13]
+decoded ['?', '7 meter into cm.', 's.', 'terms of kg?', 'terms of cm?', '7 KB into bit?', 'terms of in?', 'into g?', '3 GB into MB.', 'How many ounce is 6 quart?', 'Please convert 5 ft into m.', 'a quantity of ounce.', '?', 'B in byte?', 'there per 7 ton?', '', 'litre is 4 quart?', '?', '3 units?', 'How many km is 2 miles?', 'What is 1 GB in M?', '?', 'kg make up 1 pound?', 'equivalent in l?', 'a quantity of in.', 'terms of B?', 'in months?', 'd to mm?']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|>What is the conversion of 3 yd to mm?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 11
+prompt_lengths [15, 10, 14, 12, 12, 10, 12, 13, 10, 8, 8, 11, 15, 12, 10, 16, 9, 15, 13, 8, 8, 15, 9, 12, 11, 12, 13, 12, 11, 14, 10, 13]
+decoded ['?', '7 meter into cm.', 's.', 'terms of kg?', 'terms of cm?', '7 KB into bit?', 'terms of in?', 'into g?', '3 GB into MB.', 'How many ounce is 6 quart?', 'Please convert 5 ft into m.', 'a quantity of ounce.', '?', 'B in byte?', 'there per 7 ton?', '', 'litre is 4 quart?', '?', '3 units?', 'How many km is 2 miles?', 'What is 1 GB in M?', '?', 'kg make up 1 pound?', 'equivalent in l?', 'a quantity of in.', 'terms of B?', 'in months?', 'd to mm?', 'when converted to mm?']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|><|im_end|>How much is 3 m when converted to mm?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 14
+prompt_lengths [15, 10, 14, 12, 12, 10, 12, 13, 10, 8, 8, 11, 15, 12, 10, 16, 9, 15, 13, 8, 8, 15, 9, 12, 11, 12, 13, 12, 11, 14, 10, 13]
+decoded ['?', '7 meter into cm.', 's.', 'terms of kg?', 'terms of cm?', '7 KB into bit?', 'terms of in?', 'into g?', '3 GB into MB.', 'How many ounce is 6 quart?', 'Please convert 5 ft into m.', 'a quantity of ounce.', '?', 'B in byte?', 'there per 7 ton?', '', 'litre is 4 quart?', '?', '3 units?', 'How many km is 2 miles?', 'What is 1 GB in M?', '?', 'kg make up 1 pound?', 'equivalent in l?', 'a quantity of in.', 'terms of B?', 'in months?', 'd to mm?', 'when converted to mm?', 'mL?']
+decoded1 <|im_end|><|im_end|>Could you convert 7 fluid ounce to its corresponding value in mL?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 10
+prompt_lengths [15, 10, 14, 12, 12, 10, 12, 13, 10, 8, 8, 11, 15, 12, 10, 16, 9, 15, 13, 8, 8, 15, 9, 12, 11, 12, 13, 12, 11, 14, 10, 13]
+decoded ['?', '7 meter into cm.', 's.', 'terms of kg?', 'terms of cm?', '7 KB into bit?', 'terms of in?', 'into g?', '3 GB into MB.', 'How many ounce is 6 quart?', 'Please convert 5 ft into m.', 'a quantity of ounce.', '?', 'B in byte?', 'there per 7 ton?', '', 'litre is 4 quart?', '?', '3 units?', 'How many km is 2 miles?', 'What is 1 GB in M?', '?', 'kg make up 1 pound?', 'equivalent in l?', 'a quantity of in.', 'terms of B?', 'in months?', 'd to mm?', 'when converted to mm?', 'mL?', '1 KB into byte?']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|>How do we translate 1 KB into byte?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 13
+prompt_lengths [15, 10, 14, 12, 12, 10, 12, 13, 10, 8, 8, 11, 15, 12, 10, 16, 9, 15, 13, 8, 8, 15, 9, 12, 11, 12, 13, 12, 11, 14, 10, 13]
+decoded ['?', '7 meter into cm.', 's.', 'terms of kg?', 'terms of cm?', '7 KB into bit?', 'terms of in?', 'into g?', '3 GB into MB.', 'How many ounce is 6 quart?', 'Please convert 5 ft into m.', 'a quantity of ounce.', '?', 'B in byte?', 'there per 7 ton?', '', 'litre is 4 quart?', '?', '3 units?', 'How many km is 2 miles?', 'What is 1 GB in M?', '?', 'kg make up 1 pound?', 'equivalent in l?', 'a quantity of in.', 'terms of B?', 'in months?', 'd to mm?', 'when converted to mm?', 'mL?', '1 KB into byte?', 'of byte?']
+decoded1 <|im_end|><|im_end|><|im_end|>How do we express 5 kB in terms of byte?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+LLM Running on Micro Batches 32:  50% 2/4 [00:08<00:08,  4.19s/it]inside batched_generate
+prompt ['What is the measurement of 8 weeks when converted into h?', 'What is the conversion of 7 miles to ft?', 'How does 6 year measure up in terms of months?', 'Tell me how many MB are there in 7 G.', 'Convert the measurement of 4 liter into fluid ounce.', 'What does 6 l equal in millilitre terms?', 'How does 2 M measure up in terms of KB?', 'How much is 3 metric ton when converted to pound?', 'Can you provide the conversion value from metric ton to kg for 10 units?', 'What is the conversion from quart to liter for 8 units?', 'What is the measurement of 1 hour when converted into second?', 'Could you convert 8 mph to its corresponding value in kmh?', 'What does 1 tonne equal in pound terms?', 'What is the conversion from h to second for 5 units?', 'Please convert 6 h into seconds.', 'What is the measurement of 2 mph when converted into m/s?', 'Please convert 6 mi/h into ft/s.', 'What is 4 gallon in fluid ounce?', 'Convert 1 km to m?', 'Express 10 MB as a quantity of kB.', 'How do we translate 2 yd into meter?', 'What is 4 kg in g?', 'Could you provide the value of 5 cm in in?', 'Express 10 years as a quantity of months.', 'Please convert 10 m into in.', 'How many kB is 1 M?', 'How many min is 5 hours?', 'Tell me how many kg are there in 6 metric ton.', 'Express 3 ton as a quantity of kg.', 'Convert the measurement of 4 gallon into cm**3.', 'Could you convert 4 pound to its corresponding value in g?', 'How many ounce make up 8 pint?']
+outputs tensor([[2, 2, 2,  ..., 0, 0, 0],
+        [2, 2, 2,  ..., 0, 0, 0],
+        [2, 2, 2,  ..., 0, 0, 0],
+        ...,
+        [2, 2, 2,  ..., 0, 0, 0],
+        [2, 2, 2,  ..., 0, 0, 0],
+        [2, 2, 2,  ..., 0, 0, 0]], device='cuda:0')
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 13
+prompt_lengths [13, 11, 12, 12, 11, 12, 12, 12, 17, 13, 13, 14, 11, 13, 8, 15, 12, 9, 7, 13, 11, 8, 12, 12, 9, 9, 8, 13, 11, 12, 13, 9]
+decoded ['converted into h?']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|>What is the measurement of 8 weeks when converted into h?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 11
+prompt_lengths [13, 11, 12, 12, 11, 12, 12, 12, 17, 13, 13, 14, 11, 13, 8, 15, 12, 9, 7, 13, 11, 8, 12, 12, 9, 9, 8, 13, 11, 12, 13, 9]
+decoded ['converted into h?', '7 miles to ft?']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|>What is the conversion of 7 miles to ft?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 12
+prompt_lengths [13, 11, 12, 12, 11, 12, 12, 12, 17, 13, 13, 14, 11, 13, 8, 15, 12, 9, 7, 13, 11, 8, 12, 12, 9, 9, 8, 13, 11, 12, 13, 9]
+decoded ['converted into h?', '7 miles to ft?', 'in terms of months?']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|><|im_end|>How does 6 year measure up in terms of months?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 12
+prompt_lengths [13, 11, 12, 12, 11, 12, 12, 12, 17, 13, 13, 14, 11, 13, 8, 15, 12, 9, 7, 13, 11, 8, 12, 12, 9, 9, 8, 13, 11, 12, 13, 9]
+decoded ['converted into h?', '7 miles to ft?', 'in terms of months?', 'in 7 G.']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|><|im_end|>Tell me how many MB are there in 7 G.<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 11
+prompt_lengths [13, 11, 12, 12, 11, 12, 12, 12, 17, 13, 13, 14, 11, 13, 8, 15, 12, 9, 7, 13, 11, 8, 12, 12, 9, 9, 8, 13, 11, 12, 13, 9]
+decoded ['converted into h?', '7 miles to ft?', 'in terms of months?', 'in 7 G.', '4 liter into fluid ounce.']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|>Convert the measurement of 4 liter into fluid ounce.<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 12
+prompt_lengths [13, 11, 12, 12, 11, 12, 12, 12, 17, 13, 13, 14, 11, 13, 8, 15, 12, 9, 7, 13, 11, 8, 12, 12, 9, 9, 8, 13, 11, 12, 13, 9]
+decoded ['converted into h?', '7 miles to ft?', 'in terms of months?', 'in 7 G.', '4 liter into fluid ounce.', 'millilitre terms?']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|><|im_end|>What does 6 l equal in millilitre terms?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 12
+prompt_lengths [13, 11, 12, 12, 11, 12, 12, 12, 17, 13, 13, 14, 11, 13, 8, 15, 12, 9, 7, 13, 11, 8, 12, 12, 9, 9, 8, 13, 11, 12, 13, 9]
+decoded ['converted into h?', '7 miles to ft?', 'in terms of months?', 'in 7 G.', '4 liter into fluid ounce.', 'millilitre terms?', 'in terms of KB?']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|><|im_end|>How does 2 M measure up in terms of KB?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 12
+prompt_lengths [13, 11, 12, 12, 11, 12, 12, 12, 17, 13, 13, 14, 11, 13, 8, 15, 12, 9, 7, 13, 11, 8, 12, 12, 9, 9, 8, 13, 11, 12, 13, 9]
+decoded ['converted into h?', '7 miles to ft?', 'in terms of months?', 'in 7 G.', '4 liter into fluid ounce.', 'millilitre terms?', 'in terms of KB?', 'when converted to pound?']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|><|im_end|>How much is 3 metric ton when converted to pound?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 17
+prompt_lengths [13, 11, 12, 12, 11, 12, 12, 12, 17, 13, 13, 14, 11, 13, 8, 15, 12, 9, 7, 13, 11, 8, 12, 12, 9, 9, 8, 13, 11, 12, 13, 9]
+decoded ['converted into h?', '7 miles to ft?', 'in terms of months?', 'in 7 G.', '4 liter into fluid ounce.', 'millilitre terms?', 'in terms of KB?', 'when converted to pound?', '']
+decoded1 Can you provide the conversion value from metric ton to kg for 10 units?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 13
+prompt_lengths [13, 11, 12, 12, 11, 12, 12, 12, 17, 13, 13, 14, 11, 13, 8, 15, 12, 9, 7, 13, 11, 8, 12, 12, 9, 9, 8, 13, 11, 12, 13, 9]
+decoded ['converted into h?', '7 miles to ft?', 'in terms of months?', 'in 7 G.', '4 liter into fluid ounce.', 'millilitre terms?', 'in terms of KB?', 'when converted to pound?', '', '8 units?']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|>What is the conversion from quart to liter for 8 units?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 13
+prompt_lengths [13, 11, 12, 12, 11, 12, 12, 12, 17, 13, 13, 14, 11, 13, 8, 15, 12, 9, 7, 13, 11, 8, 12, 12, 9, 9, 8, 13, 11, 12, 13, 9]
+decoded ['converted into h?', '7 miles to ft?', 'in terms of months?', 'in 7 G.', '4 liter into fluid ounce.', 'millilitre terms?', 'in terms of KB?', 'when converted to pound?', '', '8 units?', 'converted into second?']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|>What is the measurement of 1 hour when converted into second?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 14
+prompt_lengths [13, 11, 12, 12, 11, 12, 12, 12, 17, 13, 13, 14, 11, 13, 8, 15, 12, 9, 7, 13, 11, 8, 12, 12, 9, 9, 8, 13, 11, 12, 13, 9]
+decoded ['converted into h?', '7 miles to ft?', 'in terms of months?', 'in 7 G.', '4 liter into fluid ounce.', 'millilitre terms?', 'in terms of KB?', 'when converted to pound?', '', '8 units?', 'converted into second?', 'kmh?']
+decoded1 <|im_end|><|im_end|><|im_end|>Could you convert 8 mph to its corresponding value in kmh?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 11
+prompt_lengths [13, 11, 12, 12, 11, 12, 12, 12, 17, 13, 13, 14, 11, 13, 8, 15, 12, 9, 7, 13, 11, 8, 12, 12, 9, 9, 8, 13, 11, 12, 13, 9]
+decoded ['converted into h?', '7 miles to ft?', 'in terms of months?', 'in 7 G.', '4 liter into fluid ounce.', 'millilitre terms?', 'in terms of KB?', 'when converted to pound?', '', '8 units?', 'converted into second?', 'kmh?', 'ne equal in pound terms?']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|>What does 1 tonne equal in pound terms?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 13
+prompt_lengths [13, 11, 12, 12, 11, 12, 12, 12, 17, 13, 13, 14, 11, 13, 8, 15, 12, 9, 7, 13, 11, 8, 12, 12, 9, 9, 8, 13, 11, 12, 13, 9]
+decoded ['converted into h?', '7 miles to ft?', 'in terms of months?', 'in 7 G.', '4 liter into fluid ounce.', 'millilitre terms?', 'in terms of KB?', 'when converted to pound?', '', '8 units?', 'converted into second?', 'kmh?', 'ne equal in pound terms?', '5 units?']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|>What is the conversion from h to second for 5 units?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 8
+prompt_lengths [13, 11, 12, 12, 11, 12, 12, 12, 17, 13, 13, 14, 11, 13, 8, 15, 12, 9, 7, 13, 11, 8, 12, 12, 9, 9, 8, 13, 11, 12, 13, 9]
+decoded ['converted into h?', '7 miles to ft?', 'in terms of months?', 'in 7 G.', '4 liter into fluid ounce.', 'millilitre terms?', 'in terms of KB?', 'when converted to pound?', '', '8 units?', 'converted into second?', 'kmh?', 'ne equal in pound terms?', '5 units?', 'Please convert 6 h into seconds.']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|>Please convert 6 h into seconds.<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 15
+prompt_lengths [13, 11, 12, 12, 11, 12, 12, 12, 17, 13, 13, 14, 11, 13, 8, 15, 12, 9, 7, 13, 11, 8, 12, 12, 9, 9, 8, 13, 11, 12, 13, 9]
+decoded ['converted into h?', '7 miles to ft?', 'in terms of months?', 'in 7 G.', '4 liter into fluid ounce.', 'millilitre terms?', 'in terms of KB?', 'when converted to pound?', '', '8 units?', 'converted into second?', 'kmh?', 'ne equal in pound terms?', '5 units?', 'Please convert 6 h into seconds.', 's?']
+decoded1 <|im_end|><|im_end|>What is the measurement of 2 mph when converted into m/s?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 12
+prompt_lengths [13, 11, 12, 12, 11, 12, 12, 12, 17, 13, 13, 14, 11, 13, 8, 15, 12, 9, 7, 13, 11, 8, 12, 12, 9, 9, 8, 13, 11, 12, 13, 9]
+decoded ['converted into h?', '7 miles to ft?', 'in terms of months?', 'in 7 G.', '4 liter into fluid ounce.', 'millilitre terms?', 'in terms of KB?', 'when converted to pound?', '', '8 units?', 'converted into second?', 'kmh?', 'ne equal in pound terms?', '5 units?', 'Please convert 6 h into seconds.', 's?', 'into ft/s.']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|><|im_end|>Please convert 6 mi/h into ft/s.<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 9
+prompt_lengths [13, 11, 12, 12, 11, 12, 12, 12, 17, 13, 13, 14, 11, 13, 8, 15, 12, 9, 7, 13, 11, 8, 12, 12, 9, 9, 8, 13, 11, 12, 13, 9]
+decoded ['converted into h?', '7 miles to ft?', 'in terms of months?', 'in 7 G.', '4 liter into fluid ounce.', 'millilitre terms?', 'in terms of KB?', 'when converted to pound?', '', '8 units?', 'converted into second?', 'kmh?', 'ne equal in pound terms?', '5 units?', 'Please convert 6 h into seconds.', 's?', 'into ft/s.', 'is 4 gallon in fluid ounce?']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|>What is 4 gallon in fluid ounce?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 7
+prompt_lengths [13, 11, 12, 12, 11, 12, 12, 12, 17, 13, 13, 14, 11, 13, 8, 15, 12, 9, 7, 13, 11, 8, 12, 12, 9, 9, 8, 13, 11, 12, 13, 9]
+decoded ['converted into h?', '7 miles to ft?', 'in terms of months?', 'in 7 G.', '4 liter into fluid ounce.', 'millilitre terms?', 'in terms of KB?', 'when converted to pound?', '', '8 units?', 'converted into second?', 'kmh?', 'ne equal in pound terms?', '5 units?', 'Please convert 6 h into seconds.', 's?', 'into ft/s.', 'is 4 gallon in fluid ounce?', 'Convert 1 km to m?']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|>Convert 1 km to m?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 13
+prompt_lengths [13, 11, 12, 12, 11, 12, 12, 12, 17, 13, 13, 14, 11, 13, 8, 15, 12, 9, 7, 13, 11, 8, 12, 12, 9, 9, 8, 13, 11, 12, 13, 9]
+decoded ['converted into h?', '7 miles to ft?', 'in terms of months?', 'in 7 G.', '4 liter into fluid ounce.', 'millilitre terms?', 'in terms of KB?', 'when converted to pound?', '', '8 units?', 'converted into second?', 'kmh?', 'ne equal in pound terms?', '5 units?', 'Please convert 6 h into seconds.', 's?', 'into ft/s.', 'is 4 gallon in fluid ounce?', 'Convert 1 km to m?', 'of kB.']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|>Express 10 MB as a quantity of kB.<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 11
+prompt_lengths [13, 11, 12, 12, 11, 12, 12, 12, 17, 13, 13, 14, 11, 13, 8, 15, 12, 9, 7, 13, 11, 8, 12, 12, 9, 9, 8, 13, 11, 12, 13, 9]
+decoded ['converted into h?', '7 miles to ft?', 'in terms of months?', 'in 7 G.', '4 liter into fluid ounce.', 'millilitre terms?', 'in terms of KB?', 'when converted to pound?', '', '8 units?', 'converted into second?', 'kmh?', 'ne equal in pound terms?', '5 units?', 'Please convert 6 h into seconds.', 's?', 'into ft/s.', 'is 4 gallon in fluid ounce?', 'Convert 1 km to m?', 'of kB.', '2 yd into meter?']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|>How do we translate 2 yd into meter?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 8
+prompt_lengths [13, 11, 12, 12, 11, 12, 12, 12, 17, 13, 13, 14, 11, 13, 8, 15, 12, 9, 7, 13, 11, 8, 12, 12, 9, 9, 8, 13, 11, 12, 13, 9]
+decoded ['converted into h?', '7 miles to ft?', 'in terms of months?', 'in 7 G.', '4 liter into fluid ounce.', 'millilitre terms?', 'in terms of KB?', 'when converted to pound?', '', '8 units?', 'converted into second?', 'kmh?', 'ne equal in pound terms?', '5 units?', 'Please convert 6 h into seconds.', 's?', 'into ft/s.', 'is 4 gallon in fluid ounce?', 'Convert 1 km to m?', 'of kB.', '2 yd into meter?', 'What is 4 kg in g?']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|>What is 4 kg in g?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 12
+prompt_lengths [13, 11, 12, 12, 11, 12, 12, 12, 17, 13, 13, 14, 11, 13, 8, 15, 12, 9, 7, 13, 11, 8, 12, 12, 9, 9, 8, 13, 11, 12, 13, 9]
+decoded ['converted into h?', '7 miles to ft?', 'in terms of months?', 'in 7 G.', '4 liter into fluid ounce.', 'millilitre terms?', 'in terms of KB?', 'when converted to pound?', '', '8 units?', 'converted into second?', 'kmh?', 'ne equal in pound terms?', '5 units?', 'Please convert 6 h into seconds.', 's?', 'into ft/s.', 'is 4 gallon in fluid ounce?', 'Convert 1 km to m?', 'of kB.', '2 yd into meter?', 'What is 4 kg in g?', '5 cm in in?']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|><|im_end|>Could you provide the value of 5 cm in in?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 12
+prompt_lengths [13, 11, 12, 12, 11, 12, 12, 12, 17, 13, 13, 14, 11, 13, 8, 15, 12, 9, 7, 13, 11, 8, 12, 12, 9, 9, 8, 13, 11, 12, 13, 9]
+decoded ['converted into h?', '7 miles to ft?', 'in terms of months?', 'in 7 G.', '4 liter into fluid ounce.', 'millilitre terms?', 'in terms of KB?', 'when converted to pound?', '', '8 units?', 'converted into second?', 'kmh?', 'ne equal in pound terms?', '5 units?', 'Please convert 6 h into seconds.', 's?', 'into ft/s.', 'is 4 gallon in fluid ounce?', 'Convert 1 km to m?', 'of kB.', '2 yd into meter?', 'What is 4 kg in g?', '5 cm in in?', 'a quantity of months.']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|><|im_end|>Express 10 years as a quantity of months.<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 9
+prompt_lengths [13, 11, 12, 12, 11, 12, 12, 12, 17, 13, 13, 14, 11, 13, 8, 15, 12, 9, 7, 13, 11, 8, 12, 12, 9, 9, 8, 13, 11, 12, 13, 9]
+decoded ['converted into h?', '7 miles to ft?', 'in terms of months?', 'in 7 G.', '4 liter into fluid ounce.', 'millilitre terms?', 'in terms of KB?', 'when converted to pound?', '', '8 units?', 'converted into second?', 'kmh?', 'ne equal in pound terms?', '5 units?', 'Please convert 6 h into seconds.', 's?', 'into ft/s.', 'is 4 gallon in fluid ounce?', 'Convert 1 km to m?', 'of kB.', '2 yd into meter?', 'What is 4 kg in g?', '5 cm in in?', 'a quantity of months.', 'convert 10 m into in.']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|>Please convert 10 m into in.<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 9
+prompt_lengths [13, 11, 12, 12, 11, 12, 12, 12, 17, 13, 13, 14, 11, 13, 8, 15, 12, 9, 7, 13, 11, 8, 12, 12, 9, 9, 8, 13, 11, 12, 13, 9]
+decoded ['converted into h?', '7 miles to ft?', 'in terms of months?', 'in 7 G.', '4 liter into fluid ounce.', 'millilitre terms?', 'in terms of KB?', 'when converted to pound?', '', '8 units?', 'converted into second?', 'kmh?', 'ne equal in pound terms?', '5 units?', 'Please convert 6 h into seconds.', 's?', 'into ft/s.', 'is 4 gallon in fluid ounce?', 'Convert 1 km to m?', 'of kB.', '2 yd into meter?', 'What is 4 kg in g?', '5 cm in in?', 'a quantity of months.', 'convert 10 m into in.', 'many kB is 1 M?']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|>How many kB is 1 M?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 8
+prompt_lengths [13, 11, 12, 12, 11, 12, 12, 12, 17, 13, 13, 14, 11, 13, 8, 15, 12, 9, 7, 13, 11, 8, 12, 12, 9, 9, 8, 13, 11, 12, 13, 9]
+decoded ['converted into h?', '7 miles to ft?', 'in terms of months?', 'in 7 G.', '4 liter into fluid ounce.', 'millilitre terms?', 'in terms of KB?', 'when converted to pound?', '', '8 units?', 'converted into second?', 'kmh?', 'ne equal in pound terms?', '5 units?', 'Please convert 6 h into seconds.', 's?', 'into ft/s.', 'is 4 gallon in fluid ounce?', 'Convert 1 km to m?', 'of kB.', '2 yd into meter?', 'What is 4 kg in g?', '5 cm in in?', 'a quantity of months.', 'convert 10 m into in.', 'many kB is 1 M?', 'How many min is 5 hours?']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|>How many min is 5 hours?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 13
+prompt_lengths [13, 11, 12, 12, 11, 12, 12, 12, 17, 13, 13, 14, 11, 13, 8, 15, 12, 9, 7, 13, 11, 8, 12, 12, 9, 9, 8, 13, 11, 12, 13, 9]
+decoded ['converted into h?', '7 miles to ft?', 'in terms of months?', 'in 7 G.', '4 liter into fluid ounce.', 'millilitre terms?', 'in terms of KB?', 'when converted to pound?', '', '8 units?', 'converted into second?', 'kmh?', 'ne equal in pound terms?', '5 units?', 'Please convert 6 h into seconds.', 's?', 'into ft/s.', 'is 4 gallon in fluid ounce?', 'Convert 1 km to m?', 'of kB.', '2 yd into meter?', 'What is 4 kg in g?', '5 cm in in?', 'a quantity of months.', 'convert 10 m into in.', 'many kB is 1 M?', 'How many min is 5 hours?', '6 metric ton.']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|>Tell me how many kg are there in 6 metric ton.<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 11
+prompt_lengths [13, 11, 12, 12, 11, 12, 12, 12, 17, 13, 13, 14, 11, 13, 8, 15, 12, 9, 7, 13, 11, 8, 12, 12, 9, 9, 8, 13, 11, 12, 13, 9]
+decoded ['converted into h?', '7 miles to ft?', 'in terms of months?', 'in 7 G.', '4 liter into fluid ounce.', 'millilitre terms?', 'in terms of KB?', 'when converted to pound?', '', '8 units?', 'converted into second?', 'kmh?', 'ne equal in pound terms?', '5 units?', 'Please convert 6 h into seconds.', 's?', 'into ft/s.', 'is 4 gallon in fluid ounce?', 'Convert 1 km to m?', 'of kB.', '2 yd into meter?', 'What is 4 kg in g?', '5 cm in in?', 'a quantity of months.', 'convert 10 m into in.', 'many kB is 1 M?', 'How many min is 5 hours?', '6 metric ton.', 'as a quantity of kg.']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|>Express 3 ton as a quantity of kg.<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 12
+prompt_lengths [13, 11, 12, 12, 11, 12, 12, 12, 17, 13, 13, 14, 11, 13, 8, 15, 12, 9, 7, 13, 11, 8, 12, 12, 9, 9, 8, 13, 11, 12, 13, 9]
+decoded ['converted into h?', '7 miles to ft?', 'in terms of months?', 'in 7 G.', '4 liter into fluid ounce.', 'millilitre terms?', 'in terms of KB?', 'when converted to pound?', '', '8 units?', 'converted into second?', 'kmh?', 'ne equal in pound terms?', '5 units?', 'Please convert 6 h into seconds.', 's?', 'into ft/s.', 'is 4 gallon in fluid ounce?', 'Convert 1 km to m?', 'of kB.', '2 yd into meter?', 'What is 4 kg in g?', '5 cm in in?', 'a quantity of months.', 'convert 10 m into in.', 'many kB is 1 M?', 'How many min is 5 hours?', '6 metric ton.', 'as a quantity of kg.', 'into cm**3.']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|><|im_end|>Convert the measurement of 4 gallon into cm**3.<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 13
+prompt_lengths [13, 11, 12, 12, 11, 12, 12, 12, 17, 13, 13, 14, 11, 13, 8, 15, 12, 9, 7, 13, 11, 8, 12, 12, 9, 9, 8, 13, 11, 12, 13, 9]
+decoded ['converted into h?', '7 miles to ft?', 'in terms of months?', 'in 7 G.', '4 liter into fluid ounce.', 'millilitre terms?', 'in terms of KB?', 'when converted to pound?', '', '8 units?', 'converted into second?', 'kmh?', 'ne equal in pound terms?', '5 units?', 'Please convert 6 h into seconds.', 's?', 'into ft/s.', 'is 4 gallon in fluid ounce?', 'Convert 1 km to m?', 'of kB.', '2 yd into meter?', 'What is 4 kg in g?', '5 cm in in?', 'a quantity of months.', 'convert 10 m into in.', 'many kB is 1 M?', 'How many min is 5 hours?', '6 metric ton.', 'as a quantity of kg.', 'into cm**3.', 'value in g?']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|>Could you convert 4 pound to its corresponding value in g?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 32
+num_return_sequences 1
+prompt_len 9
+prompt_lengths [13, 11, 12, 12, 11, 12, 12, 12, 17, 13, 13, 14, 11, 13, 8, 15, 12, 9, 7, 13, 11, 8, 12, 12, 9, 9, 8, 13, 11, 12, 13, 9]
+decoded ['converted into h?', '7 miles to ft?', 'in terms of months?', 'in 7 G.', '4 liter into fluid ounce.', 'millilitre terms?', 'in terms of KB?', 'when converted to pound?', '', '8 units?', 'converted into second?', 'kmh?', 'ne equal in pound terms?', '5 units?', 'Please convert 6 h into seconds.', 's?', 'into ft/s.', 'is 4 gallon in fluid ounce?', 'Convert 1 km to m?', 'of kB.', '2 yd into meter?', 'What is 4 kg in g?', '5 cm in in?', 'a quantity of months.', 'convert 10 m into in.', 'many kB is 1 M?', 'How many min is 5 hours?', '6 metric ton.', 'as a quantity of kg.', 'into cm**3.', 'value in g?', 'many ounce make up 8 pint?']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|><|im_end|>How many ounce make up 8 pint?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+LLM Running on Micro Batches 32:  75% 3/4 [00:12<00:03,  3.83s/it]inside batched_generate
+prompt ['What is the conversion from month to h for 3 units?', 'What is the conversion from miles to ft for 1 units?', 'Can you change 1 h to its equivalent in second?', 'Please convert 8 h into second.']
+outputs tensor([[ 1780,   314,   260,  9538,   429,  3531,   288,   294,   327,   216,
+            35,  4784,    47,     0,     0,     0,     0,     0,     0,     0,
+             0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+             0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+             0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+             0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+             0,     0,     0],
+        [ 1780,   314,   260,  9538,   429,  4158,   288, 11083,   327,   216,
+            33,  4784,    47,     0,     0,     0,     0,     0,     0,     0,
+             0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+             0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+             0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+             0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+             0,     0,     0],
+        [    2,  7306,   346,  1363,   216,    33,   294,   288,   624,  7492,
+           281,  1796,    47,     0,     0,     0,     0,     0,     0,     0,
+             0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+             0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+             0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+             0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+             0,     0,     0],
+        [    2,     2,     2,     2,     2, 10180,  7728,   216,    40,   294,
+           618,  1796,    30,     0,     0,     0,     0,     0,     0,     0,
+             0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+             0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+             0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+             0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+             0,     0,     0]], device='cuda:0')
+outputs.shape[0] 4
+num_return_sequences 1
+prompt_len 13
+prompt_lengths [13, 13, 12, 8]
+decoded ['']
+decoded1 What is the conversion from month to h for 3 units?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 4
+num_return_sequences 1
+prompt_len 13
+prompt_lengths [13, 13, 12, 8]
+decoded ['', '']
+decoded1 What is the conversion from miles to ft for 1 units?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 4
+num_return_sequences 1
+prompt_len 12
+prompt_lengths [13, 13, 12, 8]
+decoded ['', '', '?']
+decoded1 <|im_end|>Can you change 1 h to its equivalent in second?<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+outputs.shape[0] 4
+num_return_sequences 1
+prompt_len 8
+prompt_lengths [13, 13, 12, 8]
+decoded ['', '', '?', '8 h into second.']
+decoded1 <|im_end|><|im_end|><|im_end|><|im_end|><|im_end|>Please convert 8 h into second.<|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|><|endoftext|>
+LLM Running on Micro Batches 32: 100% 4/4 [00:15<00:00,  3.96s/it]
+benchmark_result.accuracy=0.0  benchmark_result.answer_rate=0.0
