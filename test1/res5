@@ -1,0 +1,11 @@
+import re
+
+def parse_answer(self, answer: str) -> float:
+    # Extract the first <answer>...</answer> block
+    match = re.search(r"<answer>(.*?)</answer>", answer, re.DOTALL)
+    if match:
+        try:
+            return float(match.group(1).strip())
+        except ValueError:
+            return float("nan")
+    return float("nan")
