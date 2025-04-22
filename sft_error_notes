@@ -1,0 +1,33 @@
+
+[INFO     02:43:329] SFT Model Grader
+[WARNING  02:44:540]   - Test the answer accuracy                           [ 0 / 25 ValueError ]
+[ERROR    02:44:540] Traceback (most recent call last):
+[ERROR    02:44:540]   File "C:\Users\divya\OneDrive\Desktop\MSAI\ADL\homework3_v3\.venv\Lib\site-packages\peft\config.py", line 260, in _get_peft_type
+[ERROR    02:44:540]     config_file = hf_hub_download(
+[ERROR    02:44:540]                   ^^^^^^^^^^^^^^^^
+[ERROR    02:44:540]   File "C:\Users\divya\OneDrive\Desktop\MSAI\ADL\homework3_v3\.venv\Lib\site-packages\huggingface_hub\utils\_validators.py", line 106, in _inner_fn
+[ERROR    02:44:540]     validate_repo_id(arg_value)
+[ERROR    02:44:540]   File "C:\Users\divya\OneDrive\Desktop\MSAI\ADL\homework3_v3\.venv\Lib\site-packages\huggingface_hub\utils\_validators.py", line 151, in validate_repo_id
+[ERROR    02:44:540]     raise HFValidationError(f"Repo id must be a string, not {type(repo_id)}: '{repo_id}'.")
+[ERROR    02:44:540] huggingface_hub.errors.HFValidationError: Repo id must be a string, not <class 'pathlib.WindowsPath'>: 'C:\Users\divya\OneDrive\Desktop\MSAI\ADL\homework3_v3\homework\sft_model'.
+[ERROR    02:44:540]
+[ERROR    02:44:540] During handling of the above exception, another exception occurred:
+[ERROR    02:44:540]
+[ERROR    02:44:540] Traceback (most recent call last):
+[ERROR    02:44:540]   File "C:\Users\divya\OneDrive\Desktop\MSAI\ADL\homework3_v3\grader\grader.py", line 64, in wrapper
+[ERROR    02:44:540]     v = func(self, **a)
+[ERROR    02:44:540]         ^^^^^^^^^^^^^^^
+[ERROR    02:44:540]   File "C:\Users\divya\OneDrive\Desktop\MSAI\ADL\homework3_v3\grader\tests.py", line 125, in test_validation_loss      
+[ERROR    02:44:540]     model = self.load_model()
+[ERROR    02:44:540]             ^^^^^^^^^^^^^^^^^
+[ERROR    02:44:540]   File "C:\Users\divya\OneDrive\Desktop\MSAI\ADL\homework3_v3\grader\tests.py", line 105, in load_model
+[ERROR    02:44:540]     llm = getattr(self.module, f"load_{self.model_name}")()
+[ERROR    02:44:540]           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[ERROR    02:44:540]   File "C:\Users\divya\OneDrive\Desktop\MSAI\ADL\homework3_v3\homework\sft.py", line 15, in load
+[ERROR    02:44:540]     llm.model = PeftModel.from_pretrained(llm.model, model_path).to(llm.device)
+[ERROR    02:44:540]                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[ERROR    02:44:540]   File "C:\Users\divya\OneDrive\Desktop\MSAI\ADL\homework3_v3\.venv\Lib\site-packages\peft\peft_model.py", line 439, in from_pretrained
+[ERROR    02:44:540]     PeftConfig._get_peft_type(
+[ERROR    02:44:540]   File "C:\Users\divya\OneDrive\Desktop\MSAI\ADL\homework3_v3\.venv\Lib\site-packages\peft\config.py", line 266, in _get_peft_type
+[ERROR    02:44:540]     raise ValueError(f"Can't find '{CONFIG_NAME}' at '{model_id}'")
+[ERROR    02:44:540] ValueError: Can't find 'adapter_config.json' at 'C:\Users\divya\OneDrive\Desktop\MSAI\ADL\homework3_v3\homework\sft_model'
