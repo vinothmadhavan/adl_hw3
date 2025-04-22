@@ -1,0 +1,18 @@
+def tokenize(tokenizer, question: str, answer: str):
+    full_text = f"{question} {answer}{tokenizer.eos_token}"
+
+    tokenizer.padding_side = "right"
+    tokenizer.pad_token = tokenizer.eos_token
+    full = tokenizer(full_text, padding="max_length", truncation=True, max_length=128)
+
+    input_ids = full["input_ids"]
+    question_len = len(tokenizer(f"{question} ", add_special_tokens=False)["input_ids"])
+
+    labels = [-100] * question_len + input_ids[question_len:]
+
+    for i in range(len(labels)):
+        if full["attention_mask"][i] == 0:
+            labels[i] = -100
+
+    full["labels"] = labels
+    return full
