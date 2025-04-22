@@ -1,0 +1,15 @@
+100% 100/100 [02:25<00:00,  1.46s/it]
+inside batched_generate
+prompt ['Can you change 2 hour to its equivalent in min? ']
+outputs tensor([[ 7306,   346,  1363,   216,    34,  5353,   288,   624,  7492,   281,
+          1079,    47,   216,    33,    34,    32,    30,    32,   198,    44,
+         11247,    46,    33,    34,    32,    30,    32,  9617, 11247,    46,
+             2]], device='cuda:0')
+outputs.shape[0] 1
+num_return_sequences 1
+prompt_len 13
+prompt_lengths [13]
+decoded ['120.0\n<answer>120.0</answer>']
+decoded1 Can you change 2 hour to its equivalent in min? 120.0
+<answer>120.0</answer><|im_end|>
+benchmark_result.accuracy=1.0  benchmark_result.answer_rate=1.0
