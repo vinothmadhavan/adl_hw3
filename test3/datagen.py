@@ -1,0 +1,58 @@
+import json
+import re
+from .data import Dataset
+from .cot import CoTModel  # Your chain-of-thought model
+from tqdm import tqdm
+
+def extract_answer(text):
+    # Extracts the answer from <answer>...</answer>
+    match = re.search(r"<answer>(.*?)</answer>", text)
+    if match:
+        try:
+            return float(match.group(1).strip())
+        except Exception:
+            return match.group(1).strip()
+    return None
+
+def is_correct(pred, gold, tol=1e-2):
+    # Compare floats with tolerance, or strings exactly
+    try:
+        return abs(float(pred) - float(gold)) < tol
+    except Exception:
+        return str(pred).strip() == str(gold).strip()
+
+def generate_dataset(output_json: str, oversample: int = 10, temperature: float = 0.6):
+    # 1. Load dataset
+    dataset = Dataset("train")
+    # 2. Load CoT model
+    llm = CoTModel()
+    results = []
+
+    for q, gold in tqdm(dataset, desc="Generating RFT data"):
+        # 3. Generate multiple completions for a single prompt
+        completions = llm.batched_generate(
+            [q],  # Only one prompt in the batch
+            num_return_sequences=oversample,
+            temperature=temperature,
+        )
+        # completions is a list of lists: [[completion1, completion2, ...]]
+        for comp in completions[0]:
+            pred = extract_answer(comp)
+            print(f"Question: {q}")
+            print(f"Gold: {gold}")
+            print(f"Prediction: {pred}")
+            if pred is not None and is_correct(pred, gold):
+                # Save as [question, gold, reasoning]
+                results.append([q, gold, comp])
+                break  # Only keep the first correct one (or remove break to keep all)
+        # If none correct, skip
+
+    # 4. Save to JSON
+    with open(output_json, "w") as f:
+        json.dump(results, f, indent=2)
+
+if __name__ == "__main__":
+    from fire import Fire
+    Fire(generate_dataset)
+    
+    

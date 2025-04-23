@@ -1,0 +1,254 @@
+Absolutely! Here’s a **step-by-step guide** and **full code** for implementing Rejection Sampling Fine-Tuning (RFT) as described, including all the changes you need to make to your codebase.
+
+---
+
+## 1. **datagen.py** — Implement `generate_dataset`
+
+This script will:
+- Use a Chain-of-Thought (CoT) model to generate multiple completions per question.
+- Select the completion(s) with the correct answer.
+- Save the (question, answer, reasoning) triplets to `data/rft.json`.
+
+**Assumptions:**
+- You have a `CoTModel` class similar to `BaseLLM` but with chain-of-thought prompting.
+- You have a `Dataset` class that can load your data.
+- You have a function to extract the answer from a string (e.g., using regex for `<answer>...</answer>`).
+
+**datagen.py:**
+```python
+import json
+import re
+from .base_llm import Dataset
+from .cot_llm import CoTModel  # You may need to implement this or adapt BaseLLM
+from tqdm import tqdm
+
+def extract_answer(text):
+    # Extracts the answer from <answer>...</answer>
+    match = re.search(r"<answer>(.*?)</answer>", text)
+    if match:
+        try:
+            return float(match.group(1).strip())
+        except Exception:
+            return match.group(1).strip()
+    return None
+
+def is_correct(pred, gold, tol=1e-2):
+    # Compare floats with tolerance, or strings exactly
+    try:
+        return abs(float(pred) - float(gold)) < tol
+    except Exception:
+        return str(pred).strip() == str(gold).strip()
+
+def generate_dataset(output_json: str, oversample: int = 10, temperature: float = 0.6):
+    # 1. Load dataset
+    dataset = Dataset("train")
+    # 2. Load CoT model
+    llm = CoTModel(model_name="HuggingFaceTB/SmolLM2-1.7B-Instruct")
+    results = []
+
+    for q, gold in tqdm(dataset, desc="Generating RFT data"):
+        # 3. Generate multiple completions
+        completions = llm.batched_generate(
+            [q] * oversample,
+            num_return_sequences=oversample,
+            temperature=temperature,
+            max_new_tokens=64,
+        )
+        found = False
+        for comp in completions:
+            pred = extract_answer(comp)
+            if pred is not None and is_correct(pred, gold):
+                # Save as [question, gold, reasoning]
+                results.append([q, gold, comp])
+                found = True
+                break  # Only keep the first correct one (or remove break to keep all)
+        # If none correct, skip
+
+    # 4. Save to JSON
+    with open(output_json, "w") as f:
+        json.dump(results, f, indent=2)
+
+if __name__ == "__main__":
+    from fire import Fire
+    Fire(generate_dataset)
+```
+
+---
+
+## 2. **sft.py** — Modify to train on RFT data
+
+You need to allow training on the new RFT dataset (with reasoning).  
+**Change:** In `train_model`, load `data/rft.json` instead of the default dataset, and adjust the formatting.
+
+**Add this function:**
+```python
+def load_rft_dataset(path="data/rft.json"):
+    import json
+    with open(path, "r") as f:
+        data = json.load(f)
+    # Each entry: [question, gold, reasoning]
+    return data
+```
+
+**Modify `train_model` to use RFT data if specified:**
+```python
+def train_model(
+    output_dir: str,
+    use_rft: bool = False,
+    **kwargs,
+):
+    # 1. Load training data
+    if use_rft:
+        trainset = load_rft_dataset()
+        def format_example_rft(q, gold, reasoning):
+            return {"question": q, "answer": reasoning}
+        format_fn = format_example_rft
+    else:
+        trainset = Dataset("train")
+        format_fn = format_example
+
+    # ... rest of your code ...
+    tokenized_dataset = TokenizedDataset(tokenizer, trainset, format_fn)
+    # ... rest unchanged ...
+```
+**Now you can call:**  
+`python -m yourmodule.sft train --use_rft=True --output_dir=...`
+
+---
+
+## 3. **rft.py** — Copy SFT logic, but always use RFT data
+
+**rft.py:**
+```python
+from .base_llm import BaseLLM
+from .sft import test_model, load_rft_dataset, TokenizedDataset, format_example
+from peft import LoraConfig, get_peft_model
+from transformers import TrainingArguments, Trainer
+import torch
+
+def load() -> BaseLLM:
+    from pathlib import Path
+    from peft import PeftModel
+
+    model_name = "rft_model"
+    model_path = Path(__file__).parent / model_name
+
+    llm = BaseLLM()
+    llm.model = PeftModel.from_pretrained(llm.model, model_path).to(llm.device)
+    llm.model.eval()
+
+    return llm
+
+def format_example_rft(q, gold, reasoning):
+    return {"question": q, "answer": reasoning}
+
+def train_model(
+    output_dir: str,
+    **kwargs,
+):
+    # 1. Load RFT data
+    trainset = load_rft_dataset()
+    # 2. Load base model and tokenizer
+    llm = BaseLLM()
+    model = llm.model
+    tokenizer = llm.tokenizer
+
+    # 3. Add LoRA adapter (increase r if needed)
+    r = 16  # You can try 16 or 32 if <50MB
+    lora_alpha = 64
+    lora_config = LoraConfig(
+        r=r,
+        lora_alpha=lora_alpha,
+        target_modules="all-linear",
+        bias="none",
+        task_type="CAUSAL_LM"
+    )
+    model = get_peft_model(model, lora_config)
+    model.enable_input_require_grads()
+
+    # 4. Prepare tokenized dataset
+    tokenized_dataset = TokenizedDataset(tokenizer, trainset, format_example_rft)
+
+    # 5. Set up TrainingArguments
+    training_args = TrainingArguments(
+        output_dir=output_dir,
+        logging_dir=output_dir,
+        report_to="tensorboard",
+        per_device_train_batch_size=32,
+        num_train_epochs=50,
+        learning_rate=2e-4,
+        gradient_checkpointing=True,
+        save_strategy="epoch",
+        logging_steps=10,
+        remove_unused_columns=False,
+        fp16=torch.cuda.is_available(),
+        label_names=["labels"],
+    )
+
+    # 6. Initialize Trainer
+    trainer = Trainer(
+        model=model,
+        args=training_args,
+        train_dataset=tokenized_dataset,
+        tokenizer=tokenizer,
+    )
+
+    # 7. Train
+    trainer.train()
+
+    # 8. Save LoRA adapter
+    trainer.save_model(output_dir)
+
+    # 9. Optionally test
+    test_model(output_dir)
+
+if __name__ == "__main__":
+    from fire import Fire
+    Fire({"train": train_model, "test": test_model, "load": load})
+```
+
+---
+
+## 4. **cot_llm.py** (if needed)
+
+If you don’t have a `CoTModel`, you can subclass `BaseLLM` and override the prompt to include chain-of-thought instructions.
+
+---
+
+## 5. **Summary of what to change**
+
+- **datagen.py:** Implement `generate_dataset` as above.
+- **sft.py:** Add `load_rft_dataset` and allow `train_model` to use RFT data.
+- **rft.py:** Copy SFT logic, but always use RFT data and optionally increase LoRA rank.
+- **cot_llm.py:** (if needed) Implement a CoT model for diverse reasoning completions.
+
+---
+
+## 6. **How to run**
+
+1. **Generate RFT data:**
+   ```bash
+   python -m yourmodule.datagen generate_dataset --output_json=data/rft.json --oversample=10 --temperature=0.6
+   ```
+
+2. **Train RFT model:**
+   ```bash
+   python -m yourmodule.rft train --output_dir=yourmodule/rft_model
+   ```
+
+3. **Test:**
+   ```bash
+   python -m yourmodule.rft test --ckpt_path=yourmodule/rft_model
+   ```
+
+---
+
+## 7. **Tips**
+
+- You may want to increase LoRA rank (`r`) for RFT, but keep the adapter size <50MB.
+- If you want to compare SFT and RFT, keep both training scripts.
+- Make sure your `CoTModel` is able to generate reasoning steps (prompt with "Let's think step by step" or similar).
+
+---
+
+**If you need a sample `CoTModel` implementation or further help, let me know!**
